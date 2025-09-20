@@ -4,7 +4,7 @@ import { FaCode } from "react-icons/fa";
 import { FaTerminal } from "react-icons/fa6";
 import { MdMonitor } from "react-icons/md";
 
-const Skills = ({ darkMode }) => {
+const Skills = () => {
   const skillCategories = [
     {
       title: "Front-End",
@@ -35,7 +35,7 @@ const Skills = ({ darkMode }) => {
   return (
     <section
       id="skills"
-      className={`py-20 ${darkMode ? "bg-gray-900" : "bg-black"}`}
+      className="py-20 bg-gray-900"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-yellow-400 mb-12">

@@ -11,19 +11,14 @@ const LearningJourney = ({ darkMode }) => {
     {
       title: "Node.js",
       status: "in-progress",
-      progress: 60,
+      progress: 20,
       icon: <FaTerminal className="w-6 h-6" />,
     },
-    {
-      title: "Next.js",
-      status: "planned",
-      progress: 0,
-      icon: <FaCode className="w-6 h-6" />,
-    },
+    
     {
       title: "REST APIs",
       status: "in-progress",
-      progress: 40,
+      progress: 10,
       icon: <LuDatabase className="w-6 h-6" />,
     },
     {
@@ -70,7 +65,7 @@ const LearningJourney = ({ darkMode }) => {
                 </div>
                 <span className="text-gray-400">{item.progress}%</span>
               </div>
-              <div className="w-full bg-gray-700 rounded-full h-2">
+              <div className="w-full bg-gray-500 rounded-full h-2">
                 <div
                   className="bg-gradient-to-r from-yellow-400 to-yellow-600 h-2 rounded-full transition-all duration-500"
                   style={{ width: `${item.progress}%` }}

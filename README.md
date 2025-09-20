@@ -1,12 +1,25 @@
-# React + Vite
+# EmedDev Second Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive developer portfolio built with **React**, **Vite**, and **Tailwind CSS**.  
+This portfolio highlights my skills, projects, and services as an aspiring **Full-Stack Web Developer**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- ⚡ **Fast & Optimized** – Powered by Vite for blazing-fast development and builds.
+- 🎨 **Tailwind CSS Styling** – Clean, responsive UI with a professional black & gold theme.
+- 📱 **Mobile-First Design** – Fully responsive across all devices.
+- 💡 **Dynamic Sections** – About, Skills, Projects, Contact, and more.
+**React** Clean functionality with the use of react
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Built With
+- [React](https://react.dev/) – Frontend framework for UI components
+- [Vite](https://vitejs.dev/) – Next-generation build tool
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework
+
+
+---
+
+## 📂 Project Structure

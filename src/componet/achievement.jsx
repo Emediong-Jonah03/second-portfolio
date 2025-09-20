@@ -5,26 +5,57 @@ import { FaCheckCircle } from "react-icons/fa";
 import { LuMessageCircle } from "react-icons/lu";
 
 
-const Achievements = ({ darkMode }) => {
+const Achievements = () => {
   const milestones = [
+      {
+      date: "Oct 2023",
+      title: "Started HTML and CSS",
+      icon: <FaRegStar className="w-6 h-6" />,
+    },
+      {
+      date: "Sep 2024",
+      title: "Buit my first Website",
+      icon: <FaRegStar className="w-6 h-6" />,
+    },
+
+      {
+      date: "Nov 2024",
+      title: "Buit two landing pages projects",
+      icon: <FaRegStar className="w-6 h-6" />,
+    },
+    
     {
-      date: "Aug 2025",
-      title: "Started React Journey",
+      date: "Jan 2025",
+      title: "Started JavaScript and Python Journey",
+      icon: <FaRegStar className="w-6 h-6" />,
+    },
+
+    {
+      date: "Mar 2025",
+      title: "Started learning Github, Vercel, and Netlify",
+      icon: <FaRegStar className="w-6 h-6" />,
+    },
+
+     {
+      date: "Apr 2025",
+      title: "Built my first Portfolio website and deployed it to Production",
+      icon: <FaRegStar className="w-6 h-6" />,
+    },
+
+    {
+      date: "Jun 2025",
+      title: "Started learning Git",
       icon: <FaRegStar className="w-6 h-6" />,
     },
     {
-      date: "Mar 2024",
-      title: "First Website Completed",
+      date: "Jul 2025",
+      title: "Started Tailwind CSS",
       icon: <FaCheckCircle className="w-6 h-6" />,
     },
+   
     {
-      date: "Jun 2024",
-      title: "Built First Chatbot",
-      icon: <LuMessageCircle className="w-6 h-6" />,
-    },
-    {
-      date: "Jul 2024",
-      title: "Mastered Tailwind CSS",
+      date: "Aug 2025",
+      title: "Started React till date",
       icon: <FaCode className="w-6 h-6" />,
     },
   
@@ -33,7 +64,7 @@ const Achievements = ({ darkMode }) => {
   return (
     <section
       id="achievements"
-      className={`py-20 ${darkMode ? "bg-gray-800" : "bg-gray-900"}`}
+      className={`py-20 bg-gray-800`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-yellow-400 mb-12">

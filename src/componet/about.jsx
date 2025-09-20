@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaRegUser } from "react-icons/fa";
+import image from "/src/assets/profile.png"
 
 const About = ({ darkMode }) => {
   const quickFacts = {
@@ -8,12 +9,11 @@ const About = ({ darkMode }) => {
     Interests: ["AI/ML", "Cloud Computing", "Open Source"],
   };
 
-  const [userProfile, setUserPrifile] = useState(<FaRegUser className="w-32 h-32 text-black" />)
 
   return (
     <section
       id="about"
-      className={`py-20 ${darkMode ? "bg-gray-800" : "bg-gray-900"}`}
+      className="py-20 bg-gray-800" 
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-yellow-400 mb-12">
@@ -34,13 +34,13 @@ const About = ({ darkMode }) => {
             </p>
             <div className="bg-black/50 p-6 rounded-lg border border-yellow-500/20">
               <pre className="text-sm text-gray-300 overflow-x-auto">
-                <code className="text-red-400" >{JSON.stringify(quickFacts, null, 2)}</code>
+                <code className="text-yellow-300" >{JSON.stringify(quickFacts, null, 2)}</code>
               </pre>
             </div>
           </div>
           <div className="flex justify-center">
             <div className="w-64 h-64 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
-             {userProfile}
+             <img src={image} />
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-const Projects = ({ darkMode }) => {
+const Projects = () => {
   const projects = [
     {
       title: "E-Commerce Platform",
@@ -50,7 +50,7 @@ const Projects = ({ darkMode }) => {
   return (
     <section
       id="projects"
-      className={`py-20 ${darkMode ? "bg-gray-800" : "bg-gray-900"}`}
+      className={`py-20 bg-gray-800`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-yellow-400 mb-12">

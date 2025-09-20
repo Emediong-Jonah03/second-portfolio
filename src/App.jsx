@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import Navigation from './componet/navigation'
 import Hero from './componet/hero';
 import About from './componet/about';
@@ -19,21 +20,50 @@ const App = () => {
     setDarkMode(!darkMode);
   };
 
+   const myData = [
+    {
+      linkedin: "www.linkedin.com/in/emediong-jonah-68a093329", 
+      GitHubProfile: "https://t.co/OBbI1f1oVK", 
+      Xprofile: "https://twitter.com/EmediongJ15081",
+      gmail: "mailto: jonahemediong9@gmail.com"
+    },
+ 
+  ]
+
+  const gitHub = myData.map(data => data.GitHubProfile)
+  const linkedin = myData.map(data => data.linkedin)
+  const twitter = myData.map(data => data.Xprofile)
+  const gmail= myData.map(data => data.gmail)
+  const style = {
+      colors : "red",
+      backgroundColor : "green"
+  }
+ 
+darkMode ? style : ""
   return (
-    <div className={darkMode ? "dark" : ""}>
+    < >
       <Navigation darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Hero />
-      <About darkMode={darkMode} />
-      <Skills darkMode={darkMode} />
+      <About darkMode={darkMode}  />
+      <Skills darkMode={darkMode}   />
       <Projects darkMode={darkMode} />
-      <LearningJourney darkMode={darkMode} />
-      <Achievements darkMode={darkMode} />
+      <LearningJourney darkMode={darkMode}   />
+      <Achievements darkMode={darkMode}   />
       <Blog darkMode={darkMode} />
-      <Testimonials darkMode={darkMode} />
-      <GitHubProfile darkMode={darkMode} />
-     <Contact darkMode={darkMode} />
-      <Footer darkMode={darkMode} />
-    </div>
+      <Testimonials darkMode={darkMode}   />
+      <GitHubProfile darkMode={darkMode}  gitHub={gitHub} />
+
+     <Contact darkMode={darkMode}  linkedin={linkedin}
+                                    gmail={gmail}
+                                    twitter={twitter}
+                                    gitHub={gitHub} />
+
+      <Footer darkMode={darkMode}  linkedin={linkedin}
+                                    gmail={gmail}
+                                    twitter={twitter}
+                                    gitHub={gitHub} />
+    </>
   );
 };
+
 export default App;

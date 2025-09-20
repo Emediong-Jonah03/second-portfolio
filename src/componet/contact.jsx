@@ -8,7 +8,7 @@ import { SlCalender } from "react-icons/sl";
 import { LuMessageCircle } from "react-icons/lu";
 import { MdClose } from "react-icons/md";
 
-const Contact = ({ darkMode }) => {
+const Contact = ({ darkMode, linkedin, twitter, gitHub, gmail }) => {
 
   const [formData, setFormData] = useState({
     name: "",
@@ -25,7 +25,7 @@ const Contact = ({ darkMode }) => {
   return (
     <section
       id="contact"
-      className={`py-20 ${darkMode ? "bg-gray-800" : "bg-gray-900"}`}
+      className={`py-20 bg-gray-800`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-yellow-400 mb-12">
@@ -38,28 +38,28 @@ const Contact = ({ darkMode }) => {
             </h3>
             <div className="space-y-4 mb-8">
               <a
-                href="mailto:jonahemediong9@gmail.com"
+                href={gmail}
                 className="flex items-center gap-3 text-gray-300 hover:text-yellow-400"
               >
                 <IoMdMail className="w-5 h-5" />
                 jonahemediong9@gmail.com
               </a>
               <a
-                href="https://twitter.com/EmediongJ15081"
+                href={twitter}
                 className="flex items-center gap-3 text-gray-300 hover:text-yellow-400"
               >
                 <FaSquareXTwitter className="w-5 h-5" />
                 @EmediongJ15081
               </a>
               <a
-                href="https://github.com"
+                href={gitHub}
                 className="flex items-center gap-3 text-gray-300 hover:text-yellow-400"
               >
                 <FaGithub className="w-5 h-5" />
                 GitHub
               </a>
               <a
-                href="https://linkedin.com"
+                href={linkedin}
                 className="flex items-center gap-3 text-gray-300 hover:text-yellow-400"
               >
                 <FaLinkedin className="w-5 h-5" />
@@ -80,7 +80,7 @@ const Contact = ({ darkMode }) => {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="w-full px-4 py-3 bg-black/50 border border-yellow-500/20 rounded-lg text-white placeholder-gray-500 focus:border-yellow-400 focus:outline-none"
+                className="w-full px-4 py-3 bg-black/50 border border-yellow-500/20 rounded-lg text-white placeholder-gray-500 focus:border-yellow-400  focus:outline-none"
                 required
               />
               <input

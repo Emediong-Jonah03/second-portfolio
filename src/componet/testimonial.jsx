@@ -53,9 +53,9 @@ const Testimonials = ({ darkMode }) => {
 };
 
 // GitHub Stats Section
-function GitHubProfile({darkMode}) {
+function GitHubProfile({gitHub}) {
   return (
-    <section className={`py-20 ${darkMode ? "bg-gray-900" : "bg-black"}`}>
+    <section className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-yellow-400 mb-12">
           GitHub Activity
@@ -79,7 +79,8 @@ function GitHubProfile({darkMode}) {
           </div>
           <div className="mt-8 flex justify-center">
             <a
-              href="https://github.com"
+              href={gitHub}
+              alt="Github"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-300 transition-colors"
