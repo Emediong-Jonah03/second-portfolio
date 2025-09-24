@@ -6,7 +6,7 @@ import { LuBrain } from "react-icons/lu";
 import { FaCode } from "react-icons/fa";
 import { FaTerminal } from "react-icons/fa6";
 
-const LearningJourney = ({ darkMode }) => {
+const LearningJourney = () => {
   const roadmap = [
     {
       title: "Node.js",
@@ -38,7 +38,7 @@ const LearningJourney = ({ darkMode }) => {
   return (
     <section
       id="learning"
-      className={`py-20 ${darkMode ? "bg-gray-900" : "bg-black"}`}
+      className={`py-20 bg-gray-800`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-yellow-400 mb-12">

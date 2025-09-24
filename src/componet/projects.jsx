@@ -1,50 +1,50 @@
 import { FaGithub } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import cosmec from "/src/assets/cosmec.png"
+import AIChef from "../assets/AI-web-app.png"
+import hotelImg from "../assets/hotel.png"
 
 const Projects = () => {
   const projects = [
     {
       title: "E-Commerce Platform",
+      image: cosmec,
+      alt: "e-commerce website image",
       description:
         "Modern shopping cart with product filtering and checkout flow",
       problem: "Complex state management for cart operations",
       process: "Implemented React Context API with localStorage persistence",
       result: "Smooth UX with real-time cart updates",
       tech: ["React", "Tailwind CSS", "Context API"],
-      liveDemo: "",
-      github: "",
+      liveDemo: "nothing yet",
+      github: "https://github.com/Emediong-Jonah03/cosmec",
     },
     {
       title: "Hotel Booking Website",
+      image: hotelImg,
+      alt: "Hotel website image",
       description: "Responsive hotel reservation system with room gallery",
       problem: "Need for mobile-first booking experience",
-      process: "Built responsive layouts with Tailwind CSS grid system",
+      process: "Built responsive layouts  CSS grid system",
       result: "50% increase in mobile bookings",
       tech: ["HTML", "CSS", "JavaScript"],
-      liveDemo: "",
-      github: "",
+      liveDemo: "https://havenhotel.netlify.app/",
+      github: "https://github.com/Emediong-Jonah03/Hotel-website",
     },
     {
-      title: "AI Chatbot Integration",
-      description: "Customer support chatbot with natural language processing",
-      problem: "High volume of repetitive customer queries",
+      title: "AI Chef",
+      image: AIChef,
+      alt: "AI-chef-web-app",
+      description: "An AI powered web app that takes inputs of Ingredients and form receipe",
+      problem: "Confusion on decision making",
       process: "Integrated AI API with custom React components",
-      result: "70% reduction in support tickets",
-      tech: ["React", "API Integration", "WebSocket"],
-      liveDemo: "#",
-      github: "#",
+      result: "50% time saving",
+      tech: ["React", "API Integration", "Tailwind CSS"],
+      liveDemo: "nothing yet",
+      github: "https://github.com/Emediong-Jonah03/AI-Chef",
     },
-    {
-      title: "Interactive Quiz App",
-      description: "Educational quiz platform with progress tracking",
-      problem: "Engaging way to test knowledge retention",
-      process: "Created dynamic question system with scoring logic",
-      result: "Used by 500+ students for learning",
-      tech: ["React", "JavaScript", "LocalStorage"],
-      liveDemo: "",
-      github: "",
-    },
+    
   ];
 
   return (
@@ -62,10 +62,11 @@ const Projects = () => {
               key={index}
               className="bg-black/50 rounded-xl overflow-hidden border border-yellow-500/20 hover:border-yellow-500/40 transition-all"
             >
-              <div className="h-48 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
-                <FaCode className="w-16 h-16 text-yellow-400/50" />
+              <div className="h-48 w-full overflow-hidden">
+               {/* <FaCode className="w-16 h-16 text-yellow-400/50" />*/}
+               <img src={project.image} alt={project.alt} className="w-auto h-auto object-cover" />
               </div>
-              <div className="p-6">
+              <div className="p-6 bg-gradient-to-bl from-gray-700 to-gray-900">
                 <h3 className="text-2xl font-semibold text-white mb-3">
                   {project.title}
                 </h3>
@@ -102,13 +103,13 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-4">
-                  <a
+                 {project.liveDemo == "nothing yet" ? null : <a
                     href={project.liveDemo}
                     className="flex items-center gap-2 text-yellow-400 hover:text-yellow-300"
                   >
                     <FaExternalLinkAlt className="w-4 h-4" />
                     Live Demo
-                  </a>
+                  </a>}
                   <a
                     href={project.github}
                     className="flex items-center gap-2 text-gray-400 hover:text-white"
