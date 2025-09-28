@@ -3,6 +3,8 @@ import { FaCheckCircle } from "react-icons/fa";
 import { LuBrain } from "react-icons/lu";
 import { FaGithub } from "react-icons/fa";
 
+import { useEffect, useState } from "react";
+
 const Testimonials = ({ darkMode }) => {
   const qualities = [
     {
@@ -54,6 +56,17 @@ const Testimonials = ({ darkMode }) => {
 
 // GitHub Stats Section
 function GitHubProfile({gitHub}) {
+
+  const [myGithubProfile, setGitHubProfile] = useState([]);
+
+   useEffect(()=>{
+   fetch("https://api.github.com/users/Emediong-Jonah03")
+  .then(res => res.json())
+  .then(data => setGitHubProfile(data))
+},[])
+
+console.log(myGithubProfile)
+
   return (
     <section className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,11 +82,11 @@ function GitHubProfile({gitHub}) {
               <p className="text-gray-400">Contributions This Year</p>
             </div>
             <div>
-              <div className="text-3xl font-bold text-yellow-400 mb-2">20+</div>
+              <div className="text-3xl font-bold text-yellow-400 mb-2">{myGithubProfile.public_repos}</div>
               <p className="text-gray-400">Repositories</p>
             </div>
             <div>
-              <div className="text-3xl font-bold text-yellow-400 mb-2">30+</div>
+              <div className="text-3xl font-bold text-yellow-400 mb-2">{myGithubProfile.public_repos}</div>
               <p className="text-gray-400">Pull Requests</p>
             </div>
           </div>

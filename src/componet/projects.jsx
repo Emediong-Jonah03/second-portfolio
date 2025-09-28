@@ -1,11 +1,13 @@
 import { FaGithub } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import cosmec from "/src/assets/cosmec.png"
-import AIChef from "../assets/AI-web-app.png"
-import hotelImg from "../assets/hotel.png"
+import cosmec from "/src/assets/cosmec.png";
+import AIChef from "../assets/AI-web-app.png";
+import hotelImg from "../assets/hotel.png";
+import seafood from "../assets/v0-e-commerce-website-design-bay-six.vercel.app_.png"
 
 const Projects = () => {
+  
   const projects = [
     {
       title: "E-Commerce Platform",
@@ -17,8 +19,8 @@ const Projects = () => {
       process: "Implemented React Context API with localStorage persistence",
       result: "Smooth UX with real-time cart updates",
       tech: ["React", "Tailwind CSS", "Context API"],
-      liveDemo: "nothing yet",
-      github: "https://github.com/Emediong-Jonah03/cosmec",
+      liveDemo: "https://cosmetic-we.netlify.app/",
+      github: "https://github.com/Emediong-Jonah03/cosmetic-web",
     },
     {
       title: "Hotel Booking Website",
@@ -31,12 +33,26 @@ const Projects = () => {
       tech: ["HTML", "CSS", "JavaScript"],
       liveDemo: "https://havenhotel.netlify.app/",
       github: "https://github.com/Emediong-Jonah03/Hotel-website",
+    }, 
+     {
+      title: "E-Commerce Platform",
+      image: seafood,
+      alt: "e-commerce website image",
+      description:
+        "Modern Seafood Website",
+      problem: "Complex state management for cart operations",
+      process: "Implemented React Context API with localStorage persistence",
+      result: "Smooth UX with real-time cart updates",
+      tech: ["React", "Tailwind CSS", "Context API"],
+      liveDemo: "https://v0-e-commerce-website-design-bay-six.vercel.app/",
+      github: "",
     },
     {
       title: "AI Chef",
       image: AIChef,
       alt: "AI-chef-web-app",
-      description: "An AI powered web app that takes inputs of Ingredients and form receipe",
+      description:
+        "An AI powered web app that takes inputs of Ingredients and form receipe",
       problem: "Confusion on decision making",
       process: "Integrated AI API with custom React components",
       result: "50% time saving",
@@ -44,14 +60,10 @@ const Projects = () => {
       liveDemo: "nothing yet",
       github: "https://github.com/Emediong-Jonah03/AI-Chef",
     },
-    
   ];
 
   return (
-    <section
-      id="projects"
-      className={`py-20 bg-gray-800`}
-    >
+    <section id="projects" className={`py-20 bg-gray-800`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-yellow-400 mb-12">
           Featured Projects
@@ -63,8 +75,12 @@ const Projects = () => {
               className="bg-black/50 rounded-xl overflow-hidden border border-yellow-500/20 hover:border-yellow-500/40 transition-all"
             >
               <div className="h-48 w-full overflow-hidden">
-               {/* <FaCode className="w-16 h-16 text-yellow-400/50" />*/}
-               <img src={project.image} alt={project.alt} className="w-auto h-auto object-cover" />
+                {/* <FaCode className="w-16 h-16 text-yellow-400/50" />*/}
+                <img
+                  src={project.image}
+                  alt={project.alt}
+                  className="w-auto h-auto object-cover"
+                />
               </div>
               <div className="p-6 bg-gradient-to-bl from-gray-700 to-gray-900">
                 <h3 className="text-2xl font-semibold text-white mb-3">
@@ -103,13 +119,15 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-4">
-                 {project.liveDemo == "nothing yet" ? null : <a
-                    href={project.liveDemo}
-                    className="flex items-center gap-2 text-yellow-400 hover:text-yellow-300"
-                  >
-                    <FaExternalLinkAlt className="w-4 h-4" />
-                    Live Demo
-                  </a>}
+                  {project.liveDemo == "nothing yet" ? null : (
+                    <a
+                      href={project.liveDemo}
+                      className="flex items-center gap-2 text-yellow-400 hover:text-yellow-300"
+                    >
+                      <FaExternalLinkAlt className="w-4 h-4" />
+                      Live Demo
+                    </a>
+                  )}
                   <a
                     href={project.github}
                     className="flex items-center gap-2 text-gray-400 hover:text-white"
