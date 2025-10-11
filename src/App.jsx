@@ -22,7 +22,7 @@ const App = () => {
 
    const myData = [
     {
-      linkedin: "www.linkedin.com/in/emediong-jonah-68a093329", 
+      linkedin: "https://www.linkedin.com/in/emediong-jonah-68a093329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", 
       GitHubProfile: "https://t.co/OBbI1f1oVK", 
       Xprofile: "https://twitter.com/EmediongJ15081",
       gmail: "mailto: jonahemediong9@gmail.com"
