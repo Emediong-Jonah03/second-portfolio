@@ -41,7 +41,7 @@ const App = () => {
  
 darkMode ? style : ""
   return (
-    < >
+    <>
       <Navigation darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Hero />
       <About darkMode={darkMode}  />

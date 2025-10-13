@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-
 import { FaFileDownload } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
-
+import resume from "../assets/resume.pdf";
 
 const Hero = () => {
   const scrollToSection = (id) => {
@@ -11,11 +9,11 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pt-4">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pt-18">
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-          Hi, I'm <span className="text-yellow-400">EmeDev</span> <div className="mt-4 animate-wiggle">👋</div>
+          Hi, I'm <span className="text-yellow-400">Emediong Jonah</span> <div className="mt-4 animate-wiggle">👋</div>
         </h1>
         <div className="text-xl md:text-2xl text-gray-300 mb-8 h-8">
           <BiDotsHorizontalRounded
@@ -45,7 +43,7 @@ const Hero = () => {
             View My Work
           </button>
           <button className="px-8 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 transform hover:scale-105 transition-all flex items-center gap-2">
-            <FaFileDownload className="w-5 h-5 animate-bounce" />
+            <FaFileDownload  href={resume} className="w-5 h-5 animate-bounce" />
             Download Resume
           </button>
         </div>

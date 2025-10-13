@@ -13,3 +13,11 @@
     }
 }
 
+button {
+    @apply transition duration-300 ease-in-out;
+    &:hover {
+        @apply transform scale-105;
+    
+    @apply cursor-pointer;
+    }
+}

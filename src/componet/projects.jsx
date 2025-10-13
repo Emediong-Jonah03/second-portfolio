@@ -57,7 +57,7 @@ const Projects = () => {
       process: "Integrated AI API with custom React components",
       result: "50% time saving",
       tech: ["React", "API Integration", "Tailwind CSS"],
-      liveDemo: "nothing yet",
+      liveDemo: "https://my-ai-chep.netlify.app/",
       github: "https://github.com/Emediong-Jonah03/AI-Chef",
     },
   ];

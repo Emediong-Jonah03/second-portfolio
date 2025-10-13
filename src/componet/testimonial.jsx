@@ -63,6 +63,8 @@ function GitHubProfile({gitHub}) {
    fetch("https://api.github.com/users/Emediong-Jonah03")
   .then(res => res.json())
   .then(data => setGitHubProfile(data))
+  
+
 },[])
 
 console.log(myGithubProfile)
@@ -77,18 +79,15 @@ console.log(myGithubProfile)
           <div className="grid md:grid-cols-3 gap-6 text-center">
             <div>
               <div className="text-3xl font-bold text-yellow-400 mb-2">
-                150+
+               {myGithubProfile.avatar_url && <img src={myGithubProfile.avatar_url} alt="Avatar" className="w-16 h-16 rounded-full mx-auto" />}
               </div>
-              <p className="text-gray-400">Contributions This Year</p>
+              <p className="text-gray-400">Github Avatar</p>
             </div>
             <div>
               <div className="text-3xl font-bold text-yellow-400 mb-2">{myGithubProfile.public_repos}</div>
               <p className="text-gray-400">Repositories</p>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-yellow-400 mb-2">{myGithubProfile.public_repos}</div>
-              <p className="text-gray-400">Pull Requests</p>
-            </div>
+            
           </div>
           <div className="mt-8 flex justify-center">
             <a

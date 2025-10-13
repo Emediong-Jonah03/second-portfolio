@@ -8,7 +8,7 @@ import { SlCalender } from "react-icons/sl";
 import { LuMessageCircle } from "react-icons/lu";
 import { MdClose } from "react-icons/md";
 
-const Contact = ({ darkMode, linkedin, twitter, gitHub, gmail }) => {
+const Contact = ({ linkedin, twitter, gitHub, gmail }) => {
 
   const [formData, setFormData] = useState({
     name: "",
@@ -19,6 +19,7 @@ const Contact = ({ darkMode, linkedin, twitter, gitHub, gmail }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Message sent! I will get back to you soon.");
+    
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -114,7 +115,6 @@ const Contact = ({ darkMode, linkedin, twitter, gitHub, gmail }) => {
         </div>
       </div>
 
-     
     </section>
   );
 };

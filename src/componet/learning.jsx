@@ -18,19 +18,19 @@ const LearningJourney = () => {
     {
       title: "REST APIs",
       status: "in-progress",
-      progress: 10,
+      progress: 70,
       icon: <LuDatabase className="w-6 h-6" />,
     },
     {
       title: "Cloud (AWS)",
       status: "planned",
-      progress: 0,
+      progress: 15,
       icon: <BsCloudUpload className="w-6 h-6" />,
     },
     {
       title: "AI/ML Basics",
       status: "planned",
-      progress: 0,
+      progress: 10,
       icon: <LuBrain className="w-6 h-6" />,
     },
   ];
