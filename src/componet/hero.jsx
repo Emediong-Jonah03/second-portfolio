@@ -43,8 +43,8 @@ const Hero = () => {
             View My Work
           </button>
           <button className="px-8 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 transform hover:scale-105 transition-all flex items-center gap-2">
-            <FaFileDownload  href={resume} className="w-5 h-5 animate-bounce" />
-            Download Resume
+            <FaFileDownload   className="w-5 h-5 animate-bounce" />
+           <a href={resume}>Download Resume</a>
           </button>
         </div>
         <div className="mt-20 animate-bounce">
