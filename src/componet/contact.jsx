@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
+import emailjs from '@emailjs/browser';
 
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -10,6 +11,7 @@ import { MdClose } from "react-icons/md";
 
 const Contact = ({ linkedin, twitter, gitHub, gmail }) => {
 
+   const form = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,9 +20,21 @@ const Contact = ({ linkedin, twitter, gitHub, gmail }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Message sent! I will get back to you soon.");
     
     setFormData({ name: "", email: "", message: "" });
+
+    emailjs
+      .sendForm('service_b908und', 'template_j2x0eod', form.current, {
+        publicKey: 'dib_XBkJ32JntiIp6',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
   };
 
   return (
@@ -73,11 +87,12 @@ const Contact = ({ linkedin, twitter, gitHub, gmail }) => {
             </button>
           </div>
           <div>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4" ref={form}>
               <input
                 type="text"
-                placeholder="Your Name"
+                placeholder="Enter Name"
                 value={formData.name}
+                name="user_name"
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
@@ -88,6 +103,7 @@ const Contact = ({ linkedin, twitter, gitHub, gmail }) => {
                 type="email"
                 placeholder="Your Email"
                 value={formData.email}
+                name="user_email"
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
@@ -95,8 +111,9 @@ const Contact = ({ linkedin, twitter, gitHub, gmail }) => {
                 required
               />
               <textarea
-                placeholder="Your Message"
+                placeholder="Type your message here"
                 value={formData.message}
+                name="user_message"
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
