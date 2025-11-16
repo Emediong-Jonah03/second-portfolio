@@ -19,8 +19,8 @@ const Projects = () => {
       process: "Implemented React Context API with localStorage persistence",
       result: "Smooth UX with real-time cart updates",
       tech: ["React", "Tailwind CSS", "Context API"],
-      liveDemo: "https://cosmetic-we.netlify.app/",
-      github: "https://github.com/Emediong-Jonah03/cosmetic-web",
+      liveDemo: "https://cosmetic-commerce.netlify.app/",
+      github: "https://github.com/Emediong-Jonah03/cosmec-ecommerce.git",
     },
     {
       title: "Hotel Booking Website",

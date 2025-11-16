@@ -11,7 +11,8 @@ import { MdClose } from "react-icons/md";
 
 const Contact = ({ linkedin, twitter, gitHub, gmail }) => {
 
-   const form = useRef();
+  const form = useRef();
+  const [status, setStatus] = useState("Send Message");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,6 +20,7 @@ const Contact = ({ linkedin, twitter, gitHub, gmail }) => {
   });
 
   const handleSubmit = (e) => {
+   setStatus("Sending...");
     e.preventDefault();
     
     setFormData({ name: "", email: "", message: "" });
@@ -29,7 +31,8 @@ const Contact = ({ linkedin, twitter, gitHub, gmail }) => {
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+         setStatus("Sent!")
+         form.current.reset()
         },
         (error) => {
           console.log('FAILED...', error.text);
