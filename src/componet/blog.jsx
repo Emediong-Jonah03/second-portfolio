@@ -1,28 +1,25 @@
 import { FaArrowRight } from "react-icons/fa";
 import { useState } from "react"
 const Blog = () => {
- const posts = [
+   const posts = [
     {
-      title: "What I Learned Building My First React Project",
-      date: "10, August 2025",
-      excerpt:
-        "From confusion to clarity: my journey into component-based architecture and state management. I always felt stock when a new concept in react was brought up like useState, useEffect hooks I new about tenary operators but when I started using it in react I felt confused again but i did not stop trying to learn I showed up till I understood",
-      readTime: "2 min read",
+      title: "Building REST APIs with Python Flask and MongoDB",
+      excerpt: "Complete guide to creating scalable REST APIs with Python Flask and MongoDB database",
+      readTime: "8 min read",
+      category: "Backend Development"
     },
     {
-      title: "Why Tailwind Makes Me Faster as a Developer",
-      date: "Sep 18, 2025",
-      excerpt:
-        "How utility-first CSS transformed my workflow and made styling enjoyable again. It mades CSS smooth for me",
-      readTime: "30 secs read",
-    },
-    {
-      title: "The Power of Git: Version Control for Beginners",
-      date: "Sep 18, 2025",
-      excerpt:
-        "Essential Git commands and workflows that every developer should know.",
+      title: "React with Python Backend: Full-Stack Setup",
+      excerpt: "How to connect React frontend with Python backend API",
       readTime: "6 min read",
+      category: "Full-Stack"
     },
+    {
+      title: "WordPress as Headless CMS with React Frontend",
+      excerpt: "Using WordPress REST API with modern React applications",
+      readTime: "10 min read",
+      category: "WordPress"
+    }
   ];
 
  const [blog, setBlog] = useState(false)

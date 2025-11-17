@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@mescius/dspdfviewer": "^8.2.1",

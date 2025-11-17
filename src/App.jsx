@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import SEO from './componet/SEO.jsx';
+import Services from "./componet/services.jsx";
+
 import Navigation from './componet/navigation'
 import Hero from './componet/hero';
 import About from './componet/about';
@@ -42,11 +45,17 @@ const App = () => {
 darkMode ? style : ""
   return (
     <>
+      <SEO title="Emediong Jonah - Full Stack  Developer Portfolio"
+        description="Full Stack Developer specializing in React.js, JavaScript, Tailwind CSS, Python ,  WordPress. View my e-commerce projects, AI web apps, and let's work together."
+        image="/src/assets/profile.png"
+      />
+
       <Navigation darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Hero />
       <About darkMode={darkMode}  />
       <Skills darkMode={darkMode}   />
       <Projects darkMode={darkMode} />
+      <Services darkMode={darkMode}  />
       <LearningJourney darkMode={darkMode}   />
       <Achievements darkMode={darkMode}   />
       <Blog darkMode={darkMode} />

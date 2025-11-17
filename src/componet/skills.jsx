@@ -1,36 +1,35 @@
 // Skills Section
-import { GoBriefcase, } from "react-icons/go";
-import { FaCode } from "react-icons/fa";
-import { FaTerminal } from "react-icons/fa6";
+import { FaServer, FaTools } from "react-icons/fa"
+import { FaDatabase } from "react-icons/fa6";
 import { MdMonitor } from "react-icons/md";
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Front-End",
-      icon: <MdMonitor className="w-8 h-8" />,
-      skills: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "React.js"],
-      color: "from-blue-500 to-cyan-500",
-    },
-    {
-      title: "Programming",
-      icon: <FaCode className="w-8 h-8" />,
-      skills: ["Python", "JavaScript"],
+      title: "Backend Development",
+      icon: <FaServer className="w-8 h-8" />,
+      skills: ["Python", "Flask/Django", "REST APIs", "MongoDB"],
       color: "from-green-500 to-emerald-500",
     },
     {
-      title: "UI/UX",
-      icon: <GoBriefcase className="w-8 h-8" />,
-      skills: ["Figma to Code", "Responsive Design", "Accessibility"],
+      title: "Frontend Development",
+      icon: <MdMonitor className="w-8 h-8" />,
+      skills: ["React.js", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      title: "Database & CMS",
+      icon: <FaDatabase className="w-8 h-8" />,
+      skills: ["MongoDB", "WordPress", "MySQL", "Database Design"],
       color: "from-purple-500 to-pink-500",
     },
     {
-      title: "Tools",
-      icon: <FaTerminal className="w-8 h-8" />,
-      skills: ["Git/GitHub", "Vite", "npm", "Linux/Terminal"],
+      title: "DevOps & Tools",
+      icon: <FaTools className="w-8 h-8" />,
+      skills: ["Git", "Docker", "AWS", "Vercel", "Netlify"],
       color: "from-orange-500 to-red-500",
     },
-  ];
+  ]
 
   return (
     <section

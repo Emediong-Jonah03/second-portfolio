@@ -9,27 +9,19 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pt-18">
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pt-18">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-          Hi, I'm <span className="text-yellow-400">Emediong Jonah</span> <div className="mt-4 animate-wiggle">👋</div>
+          Hi, I'm <span className="text-yellow-400">Emediong Jonah</span>
+          <div className="mt-4 animate-wiggle">👋</div>
         </h1>
-        <div className="text-xl md:text-2xl text-gray-300 mb-8 h-8">
-          <BiDotsHorizontalRounded
-            texts={[
-              "Front-End Developer",
-              "Aspiring Full-Stack Engineer",
-              "Problem Solver",
-            ]}
-          />
+        <div className="text-xl md:text-2xl text-yellow-400 mb-8 h-8">
+          Full-Stack Developer | Python & MongoDB Specialist
         </div>
         <p className="text-zinc-100 mb-10 max-w-2xl mx-auto">
-          Crafting exceptional digital experiences with modern web technologies.
-          Passionate about clean code, responsive design, and continuous
-          learning.
+          Building scalable full-stack applications with <strong>Python backend</strong>, <strong>MongoDB databases</strong>, <strong>React frontend</strong>, and <strong>WordPress solutions</strong>. End-to-end development from concept to deployment.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
             onClick={() => scrollToSection("contact")}
             className="px-8 py-3 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 transform animate-pulse hover:scale-105 transition-all"
@@ -50,6 +42,7 @@ const Hero = () => {
         <div className="mt-20 animate-bounce">
           <FaChevronDown className="w-8 h-8 text-yellow-400 mx-auto" />
         </div>
+      
       </div>
     </section>
   );
