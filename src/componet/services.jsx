@@ -21,20 +21,20 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-900">
+    <section id="services" className="py-20 bg-[#E5F0F]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-yellow-400 mb-12">
+        <h2 className="text-4xl font-bold text-center text-[#003D99] mb-12">
           Development Services
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-gray-800 p-6 rounded-lg border border-yellow-500/20">
+            <div key={index} className="bg-[#99C2FF] p-6 rounded-lg border border-yellow-500/20">
               <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
-              <p className="text-gray-300 mb-4">{service.description}</p>
+              <h3 className="text-xl font-semibold text-[#033683] mb-3">{service.title}</h3>
+              <p className="text-black mb-4">{service.description}</p>
               <ul className="space-y-2">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="text-yellow-400 text-sm">✓ {feature}</li>
+                  <li key={idx} className="text-[#003D99] font-semibold text-sm">✓ {feature}</li>
                 ))}
               </ul>
             </div>

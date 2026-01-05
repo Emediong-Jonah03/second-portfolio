@@ -2,7 +2,6 @@ import { FaRegStar } from "react-icons/fa6";
 import { FaCode } from "react-icons/fa";
 import { GoBriefcase, } from "react-icons/go";
 import { FaCheckCircle } from "react-icons/fa";
-import { LuMessageCircle } from "react-icons/lu";
 
 
 const Achievements = () => {
@@ -64,10 +63,10 @@ const Achievements = () => {
   return (
     <section
       id="achievements"
-      className={`py-20 bg-gray-800`}
+      className={`py-20 bg-[#99C2FF]`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-yellow-400 mb-12">
+        <h2 className="text-4xl font-bold text-center text-[#001433] mb-12">
           Achievements
         </h2>
         <div className="relative">
@@ -84,11 +83,11 @@ const Achievements = () => {
                   index % 2 === 0 ? "text-right pr-8" : "text-left pl-8"
                 }`}
               >
-                <div className="bg-black/50 p-4 rounded-lg border border-yellow-500/20 inline-block">
+                <div className="bg-[#0066FF] p-4 rounded-lg border border-white inline-block">
                   <div className="flex items-center gap-3">
-                    <div className="text-yellow-400">{milestone.icon}</div>
+                    <div className="text-[#001433]">{milestone.icon}</div>
                     <div>
-                      <p className="text-gray-400 text-sm">{milestone.date}</p>
+                      <p className="[#E5E7EB] text-sm">{milestone.date}</p>
                       <h3 className="text-white font-semibold">
                         {milestone.title}
                       </h3>
@@ -96,7 +95,7 @@ const Achievements = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-400 rounded-full"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#0066FF] rounded-full"></div>
             </div>
           ))}
         </div>

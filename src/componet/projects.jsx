@@ -63,9 +63,9 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className={`py-20 bg-gray-800`}>
+    <section id="projects" className={`py-20 bg-[#99C2FF]`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-yellow-400 mb-12">
+        <h2 className="text-4xl font-bold text-center text-[#003D99] mb-12">
           Featured Projects
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
@@ -82,7 +82,7 @@ const Projects = () => {
                   className="w-auto h-auto object-cover"
                 />
               </div>
-              <div className="p-6 bg-gradient-to-bl from-gray-700 to-gray-900">
+              <div className="p-6 bg-gradient-to-bl from-[#164063] to-[#033683]">
                 <h3 className="text-2xl font-semibold text-white mb-3">
                   {project.title}
                 </h3>
@@ -111,7 +111,7 @@ const Projects = () => {
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-gray-800 text-yellow-400 text-xs rounded-full"
+                      className="px-3 py-1 bg-[#E5F0FF] text-[#001433] text-xs rounded-full"
                     >
                       {tech}
                     </span>

@@ -13,34 +13,34 @@ const About = ({ darkMode }) => {
   return (
     <section
       id="about"
-      className="py-20 bg-gray-800" 
+      className="py-20 bg-[#99C2FF]" 
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-yellow-400 mb-12">
+        <h2 className="text-4xl font-bold text-center text-[#001433] mb-12">
           About Me
         </h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-gray-300 text-lg mb-6">
+            <p className="text-[#000E24] text-lg mb-6">
               I'm a dedicated front-end developer with a passion for creating
               beautiful, functional web applications. Currently expanding my
               skills to become a full-stack engineer, I love tackling complex
               problems and turning ideas into digital reality.
             </p>
-            <p className="text-gray-300 text-lg mb-8">
+            <p className="text-[#002966] text-lg mb-8">
               With expertise in React, JavaScript, and modern CSS frameworks, I
               build responsive, user-friendly interfaces that deliver
               exceptional user experiences.
             </p>
-            <div className="bg-black/50 p-6 rounded-lg border border-yellow-500/20">
+            <div className="bg-[#001433] p-6 rounded-lg border-5 border-blue-500">
               <pre className="text-sm text-gray-300 overflow-x-auto">
-                <code className="text-yellow-300" >{JSON.stringify(quickFacts, null, 2)}</code>
+                <code className="text-[#fff] leading-1" >{JSON.stringify(quickFacts, null, 2)}</code>
               </pre>
             </div>
           </div>
           <div className="flex justify-center">
-            <div className="w-64 h-64 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
-             <img src={image} />
+            <div className="w-50 h-50 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
+             <img src={image} className="rounded-full"/>
             </div>
           </div>
         </div>
