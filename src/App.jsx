@@ -28,7 +28,7 @@ const App = () => {
       GitHubProfile: "https://t.co/OBbI1f1oVK",
       Xprofile: "https://twitter.com/EmediongJ15081",
       gmail: "mailto: jonahemediong9@gmail.com",
-      whatsapp: "",
+      whatsapp: "https://wa.me/message/JIBWQ6FWKT6CI1",
     },
   ];
 
