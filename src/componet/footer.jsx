@@ -9,9 +9,6 @@ const Footer = ({ gitHub, linkedin, gmail, twitter, whatsapp }) => {
     <footer className="bg-[#E5F0FF] py-2 px-9 fixed bottom-3 rounded-3xl w-9/10 left-1/2 transform -translate-x-1/2 z-20 border-2 border-[#000E24]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-[#000E24] mb-4 md:mb-0">
-            © {new Date().getFullYear()} EmeDev. All Rights Reserved.
-          </p>
           <div className="flex gap-6">
             <a
               href={whatsapp}
