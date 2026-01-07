@@ -137,7 +137,7 @@ const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
           </div>
         </div>
         <a href={whatsapp} target="_blank" rel="noopener noreferrer">
-          <FaWhatsapp className="fixed bottom-20 right-7 bg-white shadow-md w-12 h-12 text-green-500 cursor-pointer z-50" />
+          <FaWhatsapp className="fixed bottom-20 right-7 shadow-md w-12 h-12 text-green-500 cursor-pointer z-50" />
         </a>
       </div>
     </section>
