@@ -42,14 +42,14 @@ const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
   return (
     <section
       id="contact"
-      className="py-20 bg-[var(--background)]"
+      className="py-20 bg-[var(--background)] animate-fade-in"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-[var(--foreground)] mb-12">
+        <h2 className="text-4xl font-bold text-center text-[var(--foreground)] mb-12 animate-slide-up">
           Get In Touch
         </h2>
         <div className="grid md:grid-cols-2 gap-12">
-          <div className="bg-[var(--accent)] p-8 rounded-xl border border-[var(--primary)]/10 shadow-lg">
+          <div className="bg-[var(--accent)] p-8 rounded-xl border border-[var(--primary)]/10 shadow-lg animate-slide-in-left">
             <h3 className="text-2xl font-semibold text-[var(--foreground)] mb-6">
               Let's Work Together
             </h3>
@@ -99,7 +99,7 @@ const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
               Schedule a Call
             </button>
           </div>
-          <div className="bg-[var(--accent)] p-8 rounded-xl border border-[var(--primary)]/10 shadow-lg">
+          <div className="bg-[var(--accent)] p-8 rounded-xl border border-[var(--primary)]/10 shadow-lg animate-slide-up">
             <form onSubmit={handleSubmit} className="space-y-4" ref={form}>
               <input
                 type="text"

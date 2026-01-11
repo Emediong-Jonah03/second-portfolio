@@ -21,14 +21,14 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-[var(--background)]">
+    <section id="services" className="py-20 bg-[var(--background)] animate-fade-in">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-[var(--foreground)] mb-12">
+        <h2 className="text-4xl font-bold text-center text-[var(--foreground)] mb-12 animate-slide-up">
           Development Services
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-[var(--accent)] p-6 rounded-lg border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-all shadow-md">
+            <div key={index} className="bg-[var(--accent)] p-6 rounded-lg border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-all shadow-md animate-slide-up" style={{ animationDelay: `${index * 100}ms` }}>
               <div className="text-4xl mb-4">{service.icon}</div>
               <h3 className="text-xl font-semibold text-[var(--primary)] mb-3">{service.title}</h3>
               <p className="text-[var(--foreground)] opacity-80 mb-4">{service.description}</p>

@@ -63,16 +63,17 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-[var(--background)]">
+    <section id="projects" className="py-20 bg-[var(--background)] animate-fade-in">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-[var(--foreground)] mb-12">
+        <h2 className="text-4xl font-bold text-center text-[var(--foreground)] mb-12 animate-slide-up">
           Featured Projects
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-[var(--accent)] rounded-xl overflow-hidden border border-[var(--primary)]/10 hover:border-[var(--primary)]/40 transition-all shadow-lg"
+              className="bg-[var(--accent)] rounded-xl overflow-hidden border border-[var(--primary)]/10 hover:border-[var(--primary)]/40 transition-all shadow-lg animate-slide-up"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="h-48 w-full overflow-hidden">
                 <img

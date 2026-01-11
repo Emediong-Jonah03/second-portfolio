@@ -9,8 +9,8 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-[var(--background)] relative overflow-hidden pt-18">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+    <section className="min-h-screen flex items-center justify-center bg-[var(--background)] relative overflow-hidden pt-18 animate-fade-in">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 animate-slide-up">
         <h1 className="text-4xl md:text-6xl font-bold text-[var(--foreground)] mb-4">
           Hi, I'm <span className="text-[var(--primary)]">Emediong Jonah</span>
           <div className="mt-4">

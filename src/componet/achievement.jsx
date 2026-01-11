@@ -63,10 +63,10 @@ const Achievements = () => {
   return (
     <section
       id="achievements"
-      className="py-20 bg-[var(--background)]"
+      className="py-20 bg-[var(--background)] animate-fade-in"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-[var(--foreground)] mb-12">
+        <h2 className="text-4xl font-bold text-center text-[var(--foreground)] mb-12 animate-slide-up">
           Achievements
         </h2>
         <div className="relative">
@@ -74,9 +74,10 @@ const Achievements = () => {
           {milestones.map((milestone, index) => (
             <div
               key={index}
-              className={`flex items-center mb-8 ${
+              className={`flex items-center mb-8 animate-slide-up ${
                 index % 2 === 0 ? "justify-start" : "justify-end"
               }`}
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <div
                 className={`w-full md:w-5/12 ${
