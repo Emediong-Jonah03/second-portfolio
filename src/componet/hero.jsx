@@ -9,18 +9,18 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-[#e8eef3]  relative overflow-hidden pt-18">
+    <section className="min-h-screen flex items-center justify-center bg-[var(--background)] relative overflow-hidden pt-18">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <h1 className="text-4xl md:text-6xl font-bold text-black mb-4">
-          Hi, I'm <span className="text-[#0052CC]">Emediong Jonah</span>
+        <h1 className="text-4xl md:text-6xl font-bold text-[var(--foreground)] mb-4">
+          Hi, I'm <span className="text-[var(--primary)]">Emediong Jonah</span>
           <div className="mt-4">
-            <PiHandWavingBold className="w-8 animate-wiggle r h-8 inline text-[#001433]" />
+            <PiHandWavingBold className="w-8 animate-wiggle r h-8 inline text-[var(--primary)]" />
           </div>
         </h1>
-        <div className="text-xl md:text-2xl text-black mb-8 h-8">
+        <div className="text-xl md:text-2xl text-[var(--foreground)] mb-8 h-8 opacity-90">
           Full-Stack Developer | Python & MongoDB Specialist
         </div>
-        <p className="py-4 px-5 leading-normal rounded-4xl mb-10 max-w-2xl mx-auto bg-[#99C2FF] text-[#000E24] shadow-white shadow-lg">
+        <p className="py-4 px-5 leading-normal rounded-4xl mb-10 max-w-2xl mx-auto bg-[var(--accent)] text-[var(--foreground)] shadow-[var(--primary)]/10 shadow-lg">
           Building scalable full-stack applications with{" "}
           <strong>Python backend</strong>, <strong>MongoDB databases</strong>,{" "}
           <strong>React frontend</strong>, and{" "}
@@ -30,23 +30,23 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
             onClick={() => scrollToSection("contact")}
-            className="px-8 py-3 bg-[#0052CC] text-white font-semibold rounded-lg hover:bg-[#003D99] transform animate-pulse hover:scale-105 transition-all"
+            className="px-8 py-3 bg-[var(--primary)] text-white font-semibold rounded-lg hover:opacity-90 transform animate-pulse hover:scale-105 transition-all"
           >
             Hire Me
           </button>
           <button
             onClick={() => scrollToSection("projects")}
-            className="px-8 py-3 border-2 border-[#3385FF] text-[#3385FF] font-semibold rounded-lg hover:bg-[#3385FF] hover:text-white transform hover:scale-105 transition-all"
+            className="px-8 py-3 border-2 border-[var(--primary)] text-[var(--primary)] font-semibold rounded-lg hover:bg-[var(--primary)] hover:text-white transform hover:scale-105 transition-all"
           >
             View My Work
           </button>
-          <button className="px-8 py-3 bg-[#3385FF] text-white font-semibold rounded-lg hover:bg-[#003D99] transform hover:scale-105 transition-all flex items-center gap-2">
+          <button className="px-8 py-3 bg-[var(--primary)] text-white font-semibold rounded-lg hover:opacity-90 transform hover:scale-105 transition-all flex items-center gap-2">
             <FaFileDownload className="w-5 h-5 animate-bounce" />
             <a href={resume}>Download Resume</a>
           </button>
         </div>
         <div className="mt-20 animate-bounce">
-          <FaChevronDown className="w-8 h-8 text-[#0066FF] mx-auto" />
+          <FaChevronDown className="w-8 h-8 text-[var(--primary)] mx-auto" />
         </div>
       </div>
     </section>
