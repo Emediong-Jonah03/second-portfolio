@@ -53,19 +53,26 @@
     animation: scroll 30s linear infinite;
 }
 
-.animate-fade-in {
+.animate-fade-in, 
+.animate-slide-up, 
+.animate-slide-in-left {
+    opacity: 0;
+    transition: none;
+}
+
+.is-visible.animate-fade-in {
     animation: fadeIn 0.8s ease-out forwards;
 }
 
-.animate-slide-up {
+.is-visible.animate-slide-up {
     animation: slideUp 0.8s ease-out forwards;
 }
 
-.animate-slide-in-left {
+.is-visible.animate-slide-in-left {
     animation: slideInLeft 0.8s ease-out forwards;
 }
 
-.reveal {
+.reveal-hidden {
     opacity: 0;
 }
 

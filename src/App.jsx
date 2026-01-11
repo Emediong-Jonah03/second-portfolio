@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SEO from "./componet/SEO.jsx";
 import Services from "./componet/services.jsx";
 
@@ -15,6 +15,35 @@ import Contact from "./componet/contact";
 import Footer from "./componet/footer";
 
 const App = () => {
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+        } else {
+          // Optional: remove class to re-trigger animation when scrolling back up
+          // entry.target.classList.remove("is-visible");
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll(
+      ".animate-fade-in, .animate-slide-up, .animate-slide-in-left"
+    );
+    animatedElements.forEach((el) => {
+      el.classList.add("reveal-hidden");
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const myData = [
     {
       linkedin:
