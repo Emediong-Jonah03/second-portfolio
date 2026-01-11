@@ -21,7 +21,7 @@
   --accent: #CCE0FF;
 }
 
-.dark {
+:root.dark {
   --background: #000E24;
   --foreground: #E5F0FF;
   --primary: #0052CC;

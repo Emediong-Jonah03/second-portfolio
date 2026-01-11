@@ -15,12 +15,6 @@ import Contact from "./componet/contact";
 import Footer from "./componet/footer";
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-
   const myData = [
     {
       linkedin:
@@ -37,47 +31,41 @@ const App = () => {
   const twitter = myData.map((data) => data.Xprofile);
   const gmail = myData.map((data) => data.gmail);
   const whatsapp = myData.map((data) => data.whatsapp);
-  const style = {
-    colors: "red",
-    backgroundColor: "green",
-  };
 
-  darkMode ? style : "";
   return (
-    <main className="bg-white space-y-7">
+    <div className="bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300 min-h-screen">
       <SEO
         title="Emediong Jonah - Full Stack  Developer Portfolio"
         description="Full Stack Developer specializing in React.js, JavaScript, Tailwind CSS, Python ,  WordPress. View my e-commerce projects, AI web apps, and let's work together."
         image="/src/assets/profile.png"
       />
 
-      <Navigation darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <Hero />
-      <About darkMode={darkMode} />
-      <Skills darkMode={darkMode} />
-      <Projects darkMode={darkMode} />
-      <Services darkMode={darkMode} />
-      <Achievements darkMode={darkMode} />
-      <Testimonials darkMode={darkMode} />
-      <GitHubProfile darkMode={darkMode} gitHub={gitHub} />
-      <Contact
-        darkMode={darkMode}
-        linkedin={linkedin}
-        gmail={gmail}
-        twitter={twitter}
-        gitHub={gitHub}
-        whatsapp={whatsapp}
-      />
-
-      <Footer
-        darkMode={darkMode}
-        linkedin={linkedin}
-        gmail={gmail}
-        twitter={twitter}
-        gitHub={gitHub}
-        whatsapp={whatsapp}
-      />
-    </main>
+      <Navigation />
+      <div className="space-y-7">
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Services />
+        <Achievements />
+        <Testimonials />
+        <GitHubProfile gitHub={gitHub} />
+        <Contact
+          linkedin={linkedin}
+          gmail={gmail}
+          twitter={twitter}
+          gitHub={gitHub}
+          whatsapp={whatsapp}
+        />
+        <Footer
+          linkedin={linkedin}
+          gmail={gmail}
+          twitter={twitter}
+          gitHub={gitHub}
+          whatsapp={whatsapp}
+        />
+      </div>
+    </div>
   );
 };
 
