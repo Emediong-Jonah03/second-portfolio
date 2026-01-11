@@ -15,15 +15,18 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary: #fbbf24;
+  --background: #E5F0FF;
+  --foreground: #000E24;
+  --primary: #003D99;
+  --accent: #CCE0FF;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --primary: #fbbf24;
+  --background: #000E24;
+  --foreground: #E5F0FF;
+  --primary: #0052CC;
+  --accent: #001433;
+  --surface: #001433;
 }
 
 body {

@@ -39,11 +39,11 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed w-full z-50 transition-all backdrop-blur-sm border-b border-[#66A3FF]/10 top-0 bg-white/80 dark:bg-black/80">
+    <nav className="fixed w-full z-50 transition-all backdrop-blur-sm border-b border-[#003D99]/10 top-0 bg-[#E5F0FF]/80 dark:bg-[#000E24]/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <span className="text-2xl font-bold text-[#003D99] dark:text-[#fbbf24]">EmeDev</span>
+            <span className="text-2xl font-bold text-[#003D99] dark:text-[#E5F0FF]">EmeDev</span>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -52,7 +52,7 @@ const Navigation = () => {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-[#003D99] dark:text-[#fbbf24] hover:text-[#001433] dark:hover:text-white font-semibold transition-colors cursor-pointer"
+                  className="text-[#003D99] dark:text-[#E5F0FF] hover:text-[#001433] dark:hover:text-[#CCE0FF] font-semibold transition-colors cursor-pointer"
                 >
                   {item}
                 </button>
@@ -60,7 +60,7 @@ const Navigation = () => {
             )}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-[#CCE0FF] dark:bg-[#1f1f1f] text-[#003D99] dark:text-[#fbbf24] transition-colors"
+              className="p-2 rounded-full bg-[#CCE0FF] dark:bg-[#001433] text-[#003D99] dark:text-[#E5F0FF] transition-colors"
               aria-label="Toggle theme"
             >
               {isDarkMode ? <GoSun size={20} /> : <FaMoon size={20} />}
@@ -70,14 +70,14 @@ const Navigation = () => {
           <div className="flex items-center space-x-4 md:hidden">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-[#CCE0FF] dark:bg-[#1f1f1f] text-[#003D99] dark:text-[#fbbf24] transition-colors"
+              className="p-2 rounded-full bg-[#CCE0FF] dark:bg-[#001433] text-[#003D99] dark:text-[#E5F0FF] transition-colors"
               aria-label="Toggle theme"
             >
               {isDarkMode ? <GoSun size={20} /> : <FaMoon size={20} />}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-[#003D99] dark:text-[#fbbf24]"
+              className="text-[#003D99] dark:text-[#E5F0FF]"
             >
               {isOpen ? (
                 <MdClose className="font-bold w-7 h-7 cursor-pointer" />
@@ -90,14 +90,14 @@ const Navigation = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-[#CCE0FF] dark:bg-[#0a0a0a] border-t border-[#CCE0FF]/10">
+        <div className="md:hidden bg-[#CCE0FF] dark:bg-[#001433] border-t border-[#003D99]/10">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {["About", "Skills", "Projects", "Achievements", "Contact"].map(
               (item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="block px-3 py-2 text-[#003D99] dark:text-[#fbbf24] hover:text-[#001433] dark:hover:text-white transition-colors w-full text-left"
+                  className="block px-3 py-2 text-[#003D99] dark:text-[#E5F0FF] hover:text-[#001433] dark:hover:text-[#CCE0FF] transition-colors w-full text-left"
                 >
                   {item}
                 </button>
