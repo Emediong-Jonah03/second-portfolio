@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa";
 
 import { useEffect, useState } from "react";
 
-const Testimonials = ({ darkMode }) => {
+const Testimonials = () => {
   const qualities = [
     {
       title: "Professional",
@@ -25,27 +25,27 @@ const Testimonials = ({ darkMode }) => {
   ];
 
   return (
-    <section className={`py-20 ${darkMode ? "bg-gray-800" : "bg-[#E5F0FF]"}`}>
+    <section className="py-20 bg-[var(--background)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-[#001433] mb-4">
+        <h2 className="text-4xl font-bold text-center text-[var(--foreground)] mb-4">
           Emediong Jonah
         </h2>
-        <p className="text-center text-[#000E24] mb-12 max-w-2xl mx-auto">
+        <p className="text-center text-[var(--foreground)] opacity-70 mb-12 max-w-2xl mx-auto">
           Building digital excellence with passion and precision
         </p>
         <div className="grid md:grid-cols-3 gap-8">
           {qualities.map((quality, index) => (
             <div
               key={index}
-              className="text-center bg-[#0066FF] p-8 rounded-xl border border-black/10"
+              className="text-center bg-[var(--accent)] p-8 rounded-xl border border-[var(--primary)]/10 shadow-lg hover:border-[var(--primary)]/30 transition-all"
             >
-              <div className="text-[#E5E7EB] mb-4 flex justify-center">
+              <div className="text-[var(--primary)] mb-4 flex justify-center">
                 {quality.icon}
               </div>
-              <h3 className="text-xl font-semibold text-black mb-2">
+              <h3 className="text-xl font-semibold text-[var(--foreground)] mb-2">
                 {quality.title}
               </h3>
-              <p className="text-white">{quality.description}</p>
+              <p className="text-[var(--foreground)] opacity-70">{quality.description}</p>
             </div>
           ))}
         </div>
@@ -68,32 +68,43 @@ function GitHubProfile({gitHub}) {
 },[])
 
   return (
-    <section className="py-20 bg-[#99C2FF]">
+    <section className="py-20 bg-[var(--background)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-[#001433] mb-12">
+        <h2 className="text-4xl font-bold text-center text-[var(--foreground)] mb-12">
           GitHub Activity
         </h2>
-        <div className="bg-[#d0dff7] rounded-xl p-8 border border-yellow-500/20">
-          <div className="grid md:grid-cols-3 gap-6 text-center">
-            <div>
-              <div className="text-3xl font-bold text-yellow-400 mb-2">
-               {myGithubProfile.avatar_url && <img src={myGithubProfile.avatar_url} alt="Avatar" className="w-16 h-16 rounded-full mx-auto" />}
+        <div className="bg-[var(--accent)] rounded-xl p-8 border border-[var(--primary)]/20 shadow-xl">
+          <div className="grid md:grid-cols-2 gap-6 items-center">
+            <div className="flex items-center gap-6 justify-center md:justify-start">
+              {myGithubProfile.avatar_url && (
+                <img 
+                  src={myGithubProfile.avatar_url} 
+                  alt="Avatar" 
+                  className="w-24 h-24 rounded-full border-4 border-[var(--primary)] shadow-lg" 
+                />
+              )}
+              <div className="text-left">
+                <h3 className="text-2xl font-bold text-[var(--foreground)]">{myGithubProfile.name || "Emediong Jonah"}</h3>
+                <p className="text-[var(--foreground)] opacity-60">@{myGithubProfile.login}</p>
               </div>
-              <p className="text-black">Github Avatar</p>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-yellow-400 mb-2">{myGithubProfile.public_repos}</div>
-              <p className="text-black">Repositories</p>
+            <div className="flex justify-around text-center border-l border-[var(--primary)]/10">
+              <div>
+                <div className="text-4xl font-bold text-[var(--primary)] mb-1">{myGithubProfile.public_repos}</div>
+                <p className="text-[var(--foreground)] opacity-60 text-sm uppercase tracking-wider">Repositories</p>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-[var(--primary)] mb-1">{myGithubProfile.followers}</div>
+                <p className="text-[var(--foreground)] opacity-60 text-sm uppercase tracking-wider">Followers</p>
+              </div>
             </div>
-            
           </div>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-10 flex justify-center">
             <a
               href={gitHub}
-              alt="Github"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-[#0066FF] text-white font-semibold rounded-lg hover:text-black duration-200 transition-colors"
+              className="flex items-center gap-2 px-8 py-3 bg-[var(--primary)] text-white font-semibold rounded-lg hover:opacity-90 transition-all transform hover:scale-105 shadow-lg"
             >
               <FaGithub className="w-5 h-5" />
               View GitHub Profile

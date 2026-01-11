@@ -42,57 +42,64 @@ const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
   return (
     <section
       id="contact"
-      className={`py-20 bg-[#E5F0F]`}
+      className="py-20 bg-[var(--background)]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text- mb-12">
+        <h2 className="text-4xl font-bold text-center text-[var(--foreground)] mb-12">
           Get In Touch
         </h2>
         <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 className="text-2xl font-semibold text[#001433] mb-6">
+          <div className="bg-[var(--accent)] p-8 rounded-xl border border-[var(--primary)]/10 shadow-lg">
+            <h3 className="text-2xl font-semibold text-[var(--foreground)] mb-6">
               Let's Work Together
             </h3>
-            <div className="space-y-4 mb-8">
+            <div className="space-y-6 mb-8">
               <a
                 href={gmail}
-                className="flex items-center gap-3 text-[#033683] hover:text-[#0066FF]"
+                className="flex items-center gap-4 text-[var(--foreground)] opacity-80 hover:text-[var(--primary)] transition-colors group"
               >
-                <IoMdMail className="w-5 h-5" />
-                jonahemediong9@gmail.com
+                <div className="p-3 bg-[var(--background)] rounded-full group-hover:bg-[var(--primary)]/10">
+                  <IoMdMail className="w-6 h-6 text-[var(--primary)]" />
+                </div>
+                <span>jonahemediong9@gmail.com</span>
               </a>
               <a
                 href={twitter}
-                className="flex items-center gap-3 text-[#033683] hover:text-[#0066FF]"
+                target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-4 text-[var(--foreground)] opacity-80 hover:text-[var(--primary)] transition-colors group"
               >
-                <FaSquareXTwitter className="w-5 h-5" />
-                @EmediongJ15081
+                <div className="p-3 bg-[var(--background)] rounded-full group-hover:bg-[var(--primary)]/10">
+                  <FaSquareXTwitter className="w-6 h-6 text-[var(--primary)]" />
+                </div>
+                <span>@EmediongJ15081</span>
               </a>
               <a
                 href={gitHub}
-                className="flex items-center gap-3 text-[#033683] hover:text-[#0066FF]"
+                target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-4 text-[var(--foreground)] opacity-80 hover:text-[var(--primary)] transition-colors group"
               >
-                <FaGithub className="w-5 h-5" />
-                GitHub
+                <div className="p-3 bg-[var(--background)] rounded-full group-hover:bg-[var(--primary)]/10">
+                  <FaGithub className="w-6 h-6 text-[var(--primary)]" />
+                </div>
+                <span>GitHub</span>
               </a>
               <a
                 href={linkedin}
-                className="flex items-center gap-3 text-[#033683] hover:text-[#0066FF]"
+                target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-4 text-[var(--foreground)] opacity-80 hover:text-[var(--primary)] transition-colors group"
               >
-                <FaLinkedin className="w-5 h-5" />
-                LinkedIn
-              </a>
-              <a href={whatsapp} className="flex items-center gap-3 text-[#033683] hover:text-[#0066FF]">
-                <FaWhatsapp className="w-5 h-5" />
-                WhatsApp
+                <div className="p-3 bg-[var(--background)] rounded-full group-hover:bg-[var(--primary)]/10">
+                  <FaLinkedin className="w-6 h-6 text-[var(--primary)]" />
+                </div>
+                <span>LinkedIn</span>
               </a>
             </div>
-            <button className="px-6 py-3 bg-[#0066FF] text-white font-semibold rounded-lg hover:text-black transition-colors">
-              <SlCalender className="inline-block w-5 h-5 mr-2" />
+            <button className="px-6 py-3 bg-[var(--primary)] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2 shadow-md">
+              <SlCalender className="w-5 h-5" />
               Schedule a Call
             </button>
           </div>
-          <div>
+          <div className="bg-[var(--accent)] p-8 rounded-xl border border-[var(--primary)]/10 shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-4" ref={form}>
               <input
                 type="text"
@@ -102,7 +109,7 @@ const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="w-full px-4 py-3 bg-[#E5F0FF] border border-yellow-500/20 rounded-lg text-black placeholder-[#0066FF] focus:border-[#0066FF]  focus:outline-none"
+                className="w-full px-4 py-3 bg-[var(--background)] border border-[var(--primary)]/10 rounded-lg text-[var(--foreground)] placeholder-[var(--foreground)]/40 focus:border-[var(--primary)] focus:outline-none"
                 required
               />
               <input
@@ -113,7 +120,7 @@ const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
-                className="w-full px-4 py-3 bg-[#E5F0FF] border border-yellow-500/20 rounded-lg text-black placeholder-[#0066FF] focus:border-[#0066FF] focus:outline-none"
+                className="w-full px-4 py-3 bg-[var(--background)] border border-[var(--primary)]/10 rounded-lg text-[var(--foreground)] placeholder-[var(--foreground)]/40 focus:border-[var(--primary)] focus:outline-none"
                 required
               />
               <textarea
@@ -124,14 +131,14 @@ const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
                   setFormData({ ...formData, message: e.target.value })
                 }
                 rows="5"
-                className="w-full px-4 py-3 bg-[#E5F0FF] border border-yellow-500/20 rounded-lg text-black placeholder-[#0066FF] focus:border-[#0066FF] focus:outline-none resize-none"
+                className="w-full px-4 py-3 bg-[var(--background)] border border-[var(--primary)]/10 rounded-lg text-[var(--foreground)] placeholder-[var(--foreground)]/40 focus:border-[var(--primary)] focus:outline-none resize-none"
                 required
               ></textarea>
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-[#0066FF] text-white font-semibold rounded-lg hover:text-black transition-colors"
+                className="w-full px-6 py-3 bg-[var(--primary)] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity shadow-md"
               >
-                Send Message
+                {status}
               </button>
             </form>
           </div>

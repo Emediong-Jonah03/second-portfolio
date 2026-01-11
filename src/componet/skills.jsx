@@ -18,9 +18,9 @@ const Skills = () => {
       title: "Backend Development",
       icon: <FaServer className="w-8 h-8" />,
       skills: [
-        <FaPython className="w-6 h-6 inline-block" />,
-        <SiDjango className="w-6 h-6 inline-block" />,
-        <SiMongodb className="w-6 h-6 inline-block" />,
+        { name: "Python", icon: <FaPython className="w-6 h-6 inline-block" /> },
+        { name: "Django", icon: <SiDjango className="w-6 h-6 inline-block" /> },
+        { name: "MongoDB", icon: <SiMongodb className="w-6 h-6 inline-block" /> },
       ],
       color: "from-green-500 to-emerald-500",
     },
@@ -28,10 +28,10 @@ const Skills = () => {
       title: "Frontend Development",
       icon: <MdMonitor className="w-8 h-8" />,
       skills: [
-        <IoLogoReact className="w-6 h-6 inline-block" />,
-        <FaSquareJs className="w-6 h-6 inline-block" />,
-        <SiTailwindcss className="w-6 h-6 inline-block" />,
-        <FaHtml5 className="w-6 h-6 inline-block" />,
+        { name: "React", icon: <IoLogoReact className="w-6 h-6 inline-block" /> },
+        { name: "JS", icon: <FaSquareJs className="w-6 h-6 inline-block" /> },
+        { name: "Tailwind", icon: <SiTailwindcss className="w-6 h-6 inline-block" /> },
+        { name: "HTML5", icon: <FaHtml5 className="w-6 h-6 inline-block" /> },
       ],
       color: "from-blue-500 to-cyan-500",
     },
@@ -39,8 +39,8 @@ const Skills = () => {
       title: "Database",
       icon: <FaDatabase className="w-8 h-8" />,
       skills: [
-        <SiMongodb className="w-6 h-6 inline-block" />,
-        <SiMysql className="w-6 h-6 inline-block" />,
+        { name: "MongoDB", icon: <SiMongodb className="w-6 h-6 inline-block" /> },
+        { name: "MySQL", icon: <SiMysql className="w-6 h-6 inline-block" /> },
       ],
       color: "from-purple-500 to-pink-500",
     },
@@ -48,42 +48,39 @@ const Skills = () => {
       title: "DevOps & Tools",
       icon: <FaTools className="w-8 h-8" />,
       skills: [
-        <FaGitSquare className="w-6 h-6 inline-block" />,
-        <FaGithub className="w-6 h-6 inline-block" />,
-        <IoLogoVercel className="w-6 h-6 inline-block" />,
-        <SiNetlify className="w-6 h-6 inline-block" />,
+        { name: "Git", icon: <FaGitSquare className="w-6 h-6 inline-block" /> },
+        { name: "GitHub", icon: <FaGithub className="w-6 h-6 inline-block" /> },
+        { name: "Vercel", icon: <IoLogoVercel className="w-6 h-6 inline-block" /> },
+        { name: "Netlify", icon: <SiNetlify className="w-6 h-6 inline-block" /> },
       ],
       color: "from-orange-500 to-red-500",
     },
   ];
 
   return (
-    <section id="skills" className="py-20 bg-[#E5F0FF]">
+    <section id="skills" className="py-20 bg-[var(--background)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-[#003D99] mb-12">
+        <h2 className="text-4xl font-bold text-center text-[var(--foreground)] mb-12">
           Skills & Expertise
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="group relative bg-[#0066FF] rounded-xl p-6 hover:transform hover:scale-105 transition-all duration-300"
+              className="group relative bg-[var(--accent)] rounded-xl p-6 border border-[var(--primary)]/10 hover:border-[var(--primary)]/40 transition-all duration-300"
             >
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity`}
-              ></div>
               <div className="relative z-10">
-                <div className="text-[#E5E7EB] mb-4 py-3">{category.icon}</div>
-                <h3 className="text-xl font-semibold text-white mb-4">
+                <div className="text-[var(--primary)] mb-4 py-3">{category.icon}</div>
+                <h3 className="text-xl font-semibold text-[var(--foreground)] mb-4">
                   {category.title}
                 </h3>
-                <div className="space-y-2">
+                <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
                     <div
                       key={skillIndex}
-                      className="bg-white px-3 py-1 rounded-full text-sm text-[#000E24] inline-block mr-2 mb-2"
+                      className="bg-[var(--background)] px-3 py-1 rounded-full text-sm text-[var(--foreground)] border border-[var(--primary)]/5"
                     >
-                      {skill}
+                      {skill.icon}
                     </div>
                   ))}
                 </div>

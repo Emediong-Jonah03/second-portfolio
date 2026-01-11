@@ -63,55 +63,50 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className={`py-20 bg-[#99C2FF]`}>
+    <section id="projects" className="py-20 bg-[var(--background)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-[#003D99] mb-12">
+        <h2 className="text-4xl font-bold text-center text-[var(--foreground)] mb-12">
           Featured Projects
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-black/50 rounded-xl overflow-hidden border border-yellow-500/20 hover:border-yellow-500/40 transition-all"
+              className="bg-[var(--accent)] rounded-xl overflow-hidden border border-[var(--primary)]/10 hover:border-[var(--primary)]/40 transition-all shadow-lg"
             >
               <div className="h-48 w-full overflow-hidden">
-                {/* <FaCode className="w-16 h-16 text-yellow-400/50" />*/}
                 <img
                   src={project.image}
                   alt={project.alt}
-                  className="w-auto h-auto object-cover"
+                  className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <div className="p-6 bg-gradient-to-bl from-[#164063] to-[#033683]">
-                <h3 className="text-2xl font-semibold text-white mb-3">
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold text-[var(--foreground)] mb-3">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 mb-4">{project.description}</p>
+                <p className="text-[var(--foreground)] opacity-70 mb-4">{project.description}</p>
 
                 <div className="space-y-2 mb-4 text-sm">
                   <div className="flex items-start gap-2">
-                    <span className="text-red-400 font-semibold">Problem:</span>
-                    <span className="text-gray-300">{project.problem}</span>
+                    <span className="text-[var(--primary)] font-semibold min-w-[70px]">Problem:</span>
+                    <span className="text-[var(--foreground)] opacity-80">{project.problem}</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-yellow-400 font-semibold">
-                      Process:
-                    </span>
-                    <span className="text-gray-300">{project.process}</span>
+                    <span className="text-[var(--primary)] font-semibold min-w-[70px]">Process:</span>
+                    <span className="text-[var(--foreground)] opacity-80">{project.process}</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-green-400 font-semibold">
-                      Result:
-                    </span>
-                    <span className="text-gray-300">{project.result}</span>
+                    <span className="text-[var(--primary)] font-semibold min-w-[70px]">Result:</span>
+                    <span className="text-[var(--foreground)] opacity-80">{project.result}</span>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-[#E5F0FF] text-[#001433] text-xs rounded-full"
+                      className="px-3 py-1 bg-[var(--background)] text-[var(--foreground)] text-xs rounded-full border border-[var(--primary)]/10"
                     >
                       {tech}
                     </span>
@@ -119,10 +114,12 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-4">
-                  {project.liveDemo == "nothing yet" ? null : (
+                  {project.liveDemo !== "nothing yet" && (
                     <a
                       href={project.liveDemo}
-                      className="flex items-center gap-2 text-yellow-400 hover:text-yellow-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-[var(--primary)] hover:underline font-medium"
                     >
                       <FaExternalLinkAlt className="w-4 h-4" />
                       Live Demo
@@ -130,7 +127,9 @@ const Projects = () => {
                   )}
                   <a
                     href={project.github}
-                    className="flex items-center gap-2 text-gray-400 hover:text-white"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-[var(--foreground)] opacity-60 hover:opacity-100 transition-opacity font-medium"
                   >
                     <FaGithub className="w-4 h-4" />
                     GitHub
@@ -144,4 +143,5 @@ const Projects = () => {
     </section>
   );
 };
+
 export default Projects;

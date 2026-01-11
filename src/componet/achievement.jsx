@@ -63,14 +63,14 @@ const Achievements = () => {
   return (
     <section
       id="achievements"
-      className={`py-20 bg-[#99C2FF]`}
+      className="py-20 bg-[var(--background)]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-[#001433] mb-12">
+        <h2 className="text-4xl font-bold text-center text-[var(--foreground)] mb-12">
           Achievements
         </h2>
         <div className="relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-yellow-400/20"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-[var(--primary)]/20"></div>
           {milestones.map((milestone, index) => (
             <div
               key={index}
@@ -83,19 +83,19 @@ const Achievements = () => {
                   index % 2 === 0 ? "text-right pr-8" : "text-left pl-8"
                 }`}
               >
-                <div className="bg-[#0066FF] p-4 rounded-lg border border-white inline-block">
+                <div className="bg-[var(--accent)] p-4 rounded-lg border border-[var(--primary)]/20 inline-block shadow-md hover:border-[var(--primary)]/50 transition-colors">
                   <div className="flex items-center gap-3">
-                    <div className="text-[#001433]">{milestone.icon}</div>
-                    <div>
-                      <p className="[#E5E7EB] text-sm">{milestone.date}</p>
-                      <h3 className="text-white font-semibold">
+                    <div className="text-[var(--primary)]">{milestone.icon}</div>
+                    <div className={index % 2 === 0 ? "text-right" : "text-left"}>
+                      <p className="text-[var(--foreground)] opacity-60 text-xs mb-1">{milestone.date}</p>
+                      <h3 className="text-[var(--foreground)] font-semibold">
                         {milestone.title}
                       </h3>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#0066FF] rounded-full"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[var(--primary)] rounded-full border-2 border-[var(--background)]"></div>
             </div>
           ))}
         </div>
@@ -103,4 +103,5 @@ const Achievements = () => {
     </section>
   );
 };
+
 export default Achievements;
