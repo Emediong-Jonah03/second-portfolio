@@ -1,5 +1,6 @@
 // Skills Section
-import { FaPython, FaSquareJs, FaHtml5, FaGitSquare, FaGithub } from "react-icons/fa";
+import { FaPython, FaHtml5, FaGitSquare, FaGithub } from "react-icons/fa";
+import { FaJsSquare } from "react-icons/fa";
 import {
   SiDjango,
   SiMongodb,
@@ -15,7 +16,7 @@ const Skills = () => {
     { name: "Django", icon: <SiDjango className="w-12 h-12" style={{ color: '#092E20' }} /> },
     { name: "MongoDB", icon: <SiMongodb className="w-12 h-12" style={{ color: '#47A248' }} /> },
     { name: "React", icon: <IoLogoReact className="w-12 h-12" style={{ color: '#61DAFB' }} /> },
-    { name: "JS", icon: <FaSquareJs className="w-12 h-12" style={{ color: '#F7DF1E' }} /> },
+    { name: "JS", icon: <FaJsSquare className="w-12 h-12" style={{ color: '#F7DF1E' }} /> },
     { name: "Tailwind", icon: <SiTailwindcss className="w-12 h-12" style={{ color: '#06B6D4' }} /> },
     { name: "HTML5", icon: <FaHtml5 className="w-12 h-12" style={{ color: '#E34F26' }} /> },
     { name: "MySQL", icon: <SiMysql className="w-12 h-12" style={{ color: '#4479A1' }} /> },
