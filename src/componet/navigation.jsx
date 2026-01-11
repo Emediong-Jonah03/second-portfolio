@@ -1,5 +1,5 @@
 // Navigation Component
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
@@ -8,6 +8,30 @@ import { FaMoon } from "react-icons/fa";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window !== "undefined") {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        return savedTheme === "dark";
+      }
+      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+    return true;
+  });
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDarkMode]);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -15,11 +39,11 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed w-full z-50 transition-all backdrop-blur-sm border-b border-[66A3FF]/10 top-0">
+    <nav className="fixed w-full z-50 transition-all backdrop-blur-sm border-b border-[#66A3FF]/10 top-0 bg-white/80 dark:bg-black/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <span className="text-2xl font-bold text-[#003D99]">EmeDev</span>
+            <span className="text-2xl font-bold text-[#003D99] dark:text-[#fbbf24]">EmeDev</span>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -28,36 +52,52 @@ const Navigation = () => {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-[#003D99] hover:text-[#001433] font-semibold transition-colors cursor-pointer"
+                  className="text-[#003D99] dark:text-[#fbbf24] hover:text-[#001433] dark:hover:text-white font-semibold transition-colors cursor-pointer"
                 >
                   {item}
                 </button>
               )
             )}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full bg-[#CCE0FF] dark:bg-[#1f1f1f] text-[#003D99] dark:text-[#fbbf24] transition-colors"
+              aria-label="Toggle theme"
+            >
+              {isDarkMode ? <GoSun size={20} /> : <FaMoon size={20} />}
+            </button>
           </div>
 
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-[#003D99]"
-          >
-            {isOpen ? (
-              <MdClose className="font-bold text-[#003D99] w-7 h-7 cursor-pointer" />
-            ) : (
-              <FiMenu className="font-bold text-[#003D99] w-7 h-7 cursor-pointer" />
-            )}
-          </button>
+          <div className="flex items-center space-x-4 md:hidden">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full bg-[#CCE0FF] dark:bg-[#1f1f1f] text-[#003D99] dark:text-[#fbbf24] transition-colors"
+              aria-label="Toggle theme"
+            >
+              {isDarkMode ? <GoSun size={20} /> : <FaMoon size={20} />}
+            </button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-[#003D99] dark:text-[#fbbf24]"
+            >
+              {isOpen ? (
+                <MdClose className="font-bold w-7 h-7 cursor-pointer" />
+              ) : (
+                <FiMenu className="font-bold w-7 h-7 cursor-pointer" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-[#CCE0FF] border-t border[#CCE0FF]/10">
+        <div className="md:hidden bg-[#CCE0FF] dark:bg-[#0a0a0a] border-t border-[#CCE0FF]/10">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {["About", "Skills", "Projects", "Achievements", "Contact"].map(
               (item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="block px-3 py-2 text-[#003D99] hover:text-[#001433] transition-colors w-full text-left"
+                  className="block px-3 py-2 text-[#003D99] dark:text-[#fbbf24] hover:text-[#001433] dark:hover:text-white transition-colors w-full text-left"
                 >
                   {item}
                 </button>
