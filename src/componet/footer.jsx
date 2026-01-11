@@ -12,7 +12,7 @@ const Footer = ({ gitHub, linkedin, gmail, twitter, whatsapp }) => {
             <h2 className="text-2xl font-bold text-[var(--primary)]">EmeDev</h2>
             <p className="mt-2 opacity-60">Building digital excellence with passion</p>
           </div>
-          <div className="flex gap-6">
+          <div className="flex gap-6 fixed bottom-3 text-white bg-[var(--primary)] px-5 py-1 rounded-xl">
             <a
               href={whatsapp}
               className="opacity-60 hover:text-[var(--primary)] hover:opacity-100 transition-all"

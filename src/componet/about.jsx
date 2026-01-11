@@ -6,7 +6,6 @@ const About = () => {
   const quickFacts = {
     Skills: ["React", "JavaScript", "Tailwind CSS", "Html5"],
     Tools: ["Git", "Vite", "Figma", "npm"],
-    Interests: ["AI/ML", "Cloud Computing", "Open Source"],
   };
 
   return (
@@ -21,15 +20,9 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-slide-in-left">
             <p className="text-[var(--foreground)] opacity-90 text-lg mb-6">
-              I'm a dedicated front-end developer with a passion for creating
-              beautiful, functional web applications. Currently expanding my
-              skills to become a full-stack engineer, I love tackling complex
+              I'm a developer with a passion for creating
+              beautiful, functional web applications.I love tackling complex
               problems and turning ideas into digital reality.
-            </p>
-            <p className="text-[var(--foreground)] opacity-80 text-lg mb-8">
-              With expertise in React, JavaScript, and modern CSS frameworks, I
-              build responsive, user-friendly interfaces that deliver
-              exceptional user experiences.
             </p>
             <div className="bg-[var(--accent)] p-6 rounded-lg border-2 border-[var(--primary)]/20 shadow-md">
               <pre className="text-sm overflow-x-auto">
