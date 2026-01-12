@@ -17,23 +17,14 @@ const Hero = () => {
             <PiHandWavingBold className="w-8 animate-wiggle r h-8 inline text-[var(--primary)]" />
           </div>
         </h1>
-        <div className="text-xl md:text-2xl text-[var(--foreground)] mb-8 h-8 opacity-90">
-          Full-Stack Developer | Python & MongoDB Specialist
-        </div>
         <p className="py-4 px-5 leading-normal rounded-4xl mb-10 max-w-2xl mx-auto bg-[var(--accent)] text-[var(--foreground)] shadow-[var(--primary)]/10 shadow-lg">
           Building scalable full-stack applications with{" "}
           <strong>Python backend</strong>, <strong>MongoDB databases</strong>,{" "}
           <strong>React frontend</strong>, and{" "}
-          <strong>WordPress solutions</strong>. End-to-end development from
+    End-to-end development from
           concept to deployment.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="px-8 py-3 bg-[var(--primary)] text-white font-semibold rounded-lg hover:opacity-90 transform animate-pulse hover:scale-105 transition-all"
-          >
-            Hire Me
-          </button>
+        <div className="flex  gap-4 justify-center items-center">
           <button
             onClick={() => scrollToSection("projects")}
             className="px-8 py-3 border-2 border-[var(--primary)] text-[var(--primary)] font-semibold rounded-lg hover:bg-[var(--primary)] hover:text-white transform hover:scale-105 transition-all"
