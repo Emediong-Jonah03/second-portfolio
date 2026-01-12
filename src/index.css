@@ -1,107 +1,57 @@
 @import "tailwindcss";
 
-@theme {
-    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --animate-wiggle: wiggle 1s ease-in-out infinite;
-    @keyframes wiggle {
-        0%,
-        100% {
-            transform: rotate(-3deg)
-        }
-        50% {
-            transform: rotate(20deg)
-        }
-    }
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(-50%);
-        }
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-    @keyframes slideUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes slideInLeft {
-        from {
-            opacity: 0;
-            transform: translateX(-30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-}
-
-.animate-scroll {
-    animation: scroll 30s linear infinite;
-}
-
-.animate-fade-in, 
-.animate-slide-up, 
-.animate-slide-in-left {
-    opacity: 0;
-    transition: none;
-}
-
-.is-visible.animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
-}
-
-.is-visible.animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
-}
-
-.is-visible.animate-slide-in-left {
-    animation: slideInLeft 0.8s ease-out forwards;
-}
-
-.reveal-hidden {
-    opacity: 0;
-}
-
+/* Color & theme tokens */
 :root {
-  --background: #E5F0FF;
+  --background: #D6E4FF;
   --foreground: #000E24;
   --primary: #003D99;
   --accent: #CCE0FF;
+  --surface: #FFFFFF;
 }
 
-:root.dark {
+:root[data-theme="dark"] {
   --background: #000E24;
   --foreground: #E5F0FF;
   --primary: #0052CC;
-  --accent: #001433;
+  --accent: #002255;
   --surface: #001433;
 }
 
+/* Apply to body */
 body {
   background-color: var(--background);
   color: var(--foreground);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-button {
-    @apply transition duration-300 ease-in-out;
-    &:hover {
-        @apply transform scale-105;
-    
-    @apply cursor-pointer;
-    }
+/* Buttons */
+button, a.button {
+  @apply transition duration-300 ease-in-out cursor-pointer;
+}
+button:hover, a.button:hover {
+  @apply transform scale-105;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in, .animate-slide-up {
+  opacity: 0;
+  transition: none;
+}
+
+.is-visible.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.is-visible.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
 }
