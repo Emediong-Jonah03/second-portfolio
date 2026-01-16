@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import SEO from "./componet/SEO.jsx";
 import Services from "./componet/services.jsx";
+import useScrollAnimation from "./hooks/scrollAnimation.jsx";
 
 import Navigation from "./componet/navigation";
 import Hero from "./componet/hero";
@@ -13,6 +14,7 @@ import Contact from "./componet/contact";
 import Footer from "./componet/footer";
 
 const App = () => {
+  useScrollAnimation()
   useEffect(() => {
     const observerOptions = {
       root: null,

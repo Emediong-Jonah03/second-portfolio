@@ -49,7 +49,7 @@ const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
           Get In Touch
         </h2>
         <div className="grid md:grid-cols-2 gap-12">
-          <div className="bg-[var(--accent)] p-8 rounded-xl border border-[var(--primary)]/10 shadow-lg animate-slide-in-left">
+          <div className="bg-[var(--surface)] p-8 rounded-xl border border-[var(--primary)]/10 shadow-lg animate-slide-in-left">
             <h3 className="text-2xl font-semibold text-[var(--foreground)] mb-6">
               Let's Work Together
             </h3>
@@ -109,7 +109,7 @@ const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="w-full px-4 py-3 bg-[var(--background)] border border-[var(--primary)]/10 rounded-lg text-[var(--foreground)] placeholder-[var(--foreground)]/40 focus:border-[var(--primary)] focus:outline-none"
+                className="w-full px-4 py-3 bg-[var(--surface)] border border-[var(--primary)]/10 rounded-lg text-[var(--foreground)] placeholder-[var(--foreground)]/40 focus:border-[var(--primary)] focus:outline-none"
                 required
               />
               <input
@@ -120,7 +120,7 @@ const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
-                className="w-full px-4 py-3 bg-[var(--background)] border border-[var(--primary)]/10 rounded-lg text-[var(--foreground)] placeholder-[var(--foreground)]/40 focus:border-[var(--primary)] focus:outline-none"
+                className="w-full px-4 py-3 bg-[var(--surface)] border border-[var(--primary)]/10 rounded-lg text-[var(--foreground)] placeholder-[var(--foreground)]/40 focus:border-[var(--primary)] focus:outline-none"
                 required
               />
               <textarea
@@ -131,7 +131,7 @@ const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
                   setFormData({ ...formData, message: e.target.value })
                 }
                 rows="5"
-                className="w-full px-4 py-3 bg-[var(--background)] border border-[var(--primary)]/10 rounded-lg text-[var(--foreground)] placeholder-[var(--foreground)]/40 focus:border-[var(--primary)] focus:outline-none resize-none"
+                className="w-full px-4 py-3 bg-[var(--surface)] border border-[var(--primary)]/10 rounded-lg text-[var(--foreground)] placeholder-[var(--foreground)]/40 focus:border-[var(--primary)] focus:outline-none resize-none"
                 required
               ></textarea>
               <button

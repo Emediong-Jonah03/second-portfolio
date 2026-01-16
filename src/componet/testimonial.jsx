@@ -37,7 +37,7 @@ const Testimonials = () => {
           {qualities.map((quality, index) => (
             <div
               key={index}
-              className="text-center bg-[var(--accent)] p-8 rounded-xl border border-[var(--primary)]/10 shadow-lg hover:border-[var(--primary)]/30 transition-all"
+              className="text-center bg-[var(--surface)] p-8 rounded-xl border border-[var(--primary)]/10 shadow-lg hover:border-[var(--primary)]/30 transition-all"
             >
               <div className="text-[var(--primary)] mb-4 flex justify-center">
                 {quality.icon}

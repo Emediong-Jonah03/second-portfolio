@@ -12,36 +12,36 @@ const Footer = ({ gitHub, linkedin, gmail, twitter, whatsapp }) => {
             <h2 className="text-2xl font-bold text-[var(--primary)]">EmeDev</h2>
             <p className="mt-2 opacity-60">Building digital excellence with passion</p>
           </div>
-          <div className="flex gap-6 fixed bottom-3 text-white bg-[var(--primary)] px-5 py-1 rounded-xl">
+          <div className="flex gap-6 fixed bottom-3 text-white bg-[var(--primary)] px-5 py-1.5 rounded-xl">
             <a
               href={whatsapp}
-              className="opacity-60 hover:text-[var(--primary)] hover:opacity-100 transition-all"
+              className="opacity-60 text-white hover:text-[var(--accent)] hover:opacity-100 transition-all"
             >
               <FaWhatsapp className="w-6 h-6" />
             </a>
             <a
               href={gitHub}
-              className="opacity-60 hover:text-[var(--primary)] hover:opacity-100 transition-all"
+              className="opacity-60 text-white hover:text-[var(--accent)] hover:opacity-100 transition-all"
             >
               <FaGithub className="w-6 h-6" />
             </a>
             <a
               href={linkedin}
               target="_blank" rel="noopener noreferrer"
-              className="opacity-60 hover:text-[var(--primary)] hover:opacity-100 transition-all"
+              className="opacity-60 text-white hover:text-[var(--accent)] hover:opacity-100 transition-all"
             >
               <FaLinkedin className="w-6 h-6" />
             </a>
             <a
               href={twitter}
               target="_blank" rel="noopener noreferrer"
-              className="opacity-60 hover:text-[var(--primary)] hover:opacity-100 transition-all"
+              className="opacity-60 text-white hover:text-[var(--accent)] hover:opacity-100 transition-all"
             >
               <FaSquareXTwitter className="w-6 h-6" />
             </a>
             <a
               href={gmail}
-              className="opacity-60 hover:text-[var(--primary)] hover:opacity-100 transition-all"
+              className="opacity-60 text-white hover:text-[var(--accent)] hover:opacity-100 transition-all"
             >
               <IoMdMail className="w-6 h-6" />
             </a>

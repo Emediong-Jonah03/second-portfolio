@@ -2,8 +2,8 @@ import { FaGithub } from "react-icons/fa";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import cosmec from "/src/assets/cosmec.png";
 import AIChef from "../assets/AI-web-app.png";
-import hotelImg from "../assets/hotel.png";
-import seafood from "../assets/v0-e-commerce-website-design-bay-six.vercel.app_.png";
+import resumeAnalyser from "../assets/resume-analyser.png"
+import medic from "../assets/medical.png"
 
 const Projects = () => {
   const projects = [
@@ -20,28 +20,28 @@ const Projects = () => {
       github: "https://github.com/Emediong-Jonah03/cosmec-ecommerce.git",
     },
     {
-      title: "Hotel Booking Platform",
-      image: hotelImg,
-      alt: "Hotel booking website",
-      description: "Responsive hotel reservation system with room gallery",
-      problem: "Need for mobile-first booking experience",
-      process: "Built responsive layouts using CSS grid",
-      result: "50% increase in mobile bookings",
-      tech: ["HTML", "CSS", "JavaScript"],
-      liveDemo: "https://havenhotel.netlify.app/",
-      github: "https://github.com/Emediong-Jonah03/Hotel-website",
+      title: "AI Powered Resume Analyser",
+      image: resumeAnalyser,
+      alt: "resume analyser",
+      description: "A resume analyser that scans your resume and job description and gives analysis result",
+      problem: "Built for job seekers to optimise their resume",
+      process: "Built AI integretion and backend technology",
+      result: "10% increase in landing job",
+      tech: ["React","JavaScript", "LLM Nodejs"],
+      liveDemo: "https://resume-analyzer-job-matcher-alpha.vercel.app/",
+      github: "",
     },
     {
-      title: "Seafood E-Commerce",
-      image: seafood,
-      alt: "Seafood e-commerce website",
-      description: "Modern seafood shopping platform",
-      problem: "Complex state management for cart operations",
-      process: "Implemented React Context API with localStorage persistence",
-      result: "Smooth UX with real-time cart updates",
+      title: "Medical website",
+      image: medic,
+      alt: "medical website",
+      description: "A website for the medic that connects hospitals",
+      problem: "Connects hospitals",
+      process: "Implemented React Context API",
+      result: "Smooth UX and UI",
       tech: ["React", "Tailwind CSS", "Context API"],
-      liveDemo: "https://v0-e-commerce-website-design-bay-six.vercel.app/",
-      github: "", // No repo, button will hide
+      liveDemo: "https://medilink-project.netlify.app/",
+      github: "", 
     },
     {
       title: "AI Chef",

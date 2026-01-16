@@ -84,7 +84,7 @@ const Achievements = () => {
                   index % 2 === 0 ? "text-right pr-8" : "text-left pl-8"
                 }`}
               >
-                <div className="bg-[var(--accent)] p-4 rounded-lg border border-[var(--primary)]/20 inline-block shadow-md hover:border-[var(--primary)]/50 transition-colors">
+                <div className="bg-[var(--surface)] p-4 rounded-lg border border-[var(--primary)]/20 inline-block shadow-md hover:border-[var(--primary)]/50 transition-colors">
                   <div className="flex items-center gap-3">
                     <div className="text-[var(--primary)]">{milestone.icon}</div>
                     <div className={index % 2 === 0 ? "text-right" : "text-left"}>

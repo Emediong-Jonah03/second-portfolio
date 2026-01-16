@@ -46,7 +46,7 @@ const Skills = () => {
           {carouselSkills.map((skill, index) => (
             <div
               key={index}
-              className="flex-none w-40 h-40 mx-4 flex flex-col items-center justify-center bg-[var(--accent)] rounded-2xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/40 transition-all duration-300 shadow-sm group"
+              className="flex-none w-40 h-40 mx-4 flex flex-col items-center justify-center bg-[var(--surface)]  rounded-2xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/40 transition-all duration-300 shadow-sm group"
             >
               <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
                 {skill.icon}
