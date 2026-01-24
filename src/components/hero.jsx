@@ -1,6 +1,6 @@
 import { FaFileDownload, FaChevronDown } from "react-icons/fa";
 import resume from "../assets/resume.pdf";
-import image from "/src/assets/profile.png";
+import image from "/src/assets/profile-pic.jpeg";
 
 const Hero = () => {
   const scrollToSection = (id) => {

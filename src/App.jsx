@@ -1,48 +1,19 @@
 import { useState, useEffect } from "react";
-import SEO from "./componet/SEO.jsx";
-import Services from "./componet/services.jsx";
+import SEO from "./components/SEO.jsx"
+import Services from "./components/services.jsx"
 import useScrollAnimation from "./hooks/scrollAnimation.jsx";
 
-import Navigation from "./componet/navigation";
-import Hero from "./componet/hero";
-import About from "./componet/about";
-import Skills from "./componet/skills";
-import Projects from "./componet/projects";
-import Achievements from "./componet/achievement";
-import { Testimonials, GitHubProfile } from "./componet/testimonial";
-import Contact from "./componet/contact";
-import Footer from "./componet/footer";
+import Navigation from "./components/navigation.jsx"
+import Hero from "./components/hero.jsx";
+import About from "./components/about.jsx"
+import Skills from "./components/skills.jsx";
+import Projects from "./components/projects.jsx";
+import { Testimonials, GitHubProfile } from "./components/testimonial.jsx";
+import Contact from "./components/contact.jsx";
+import Footer from "./components/footer.jsx";
 
 const App = () => {
   useScrollAnimation()
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-        } else {
-          // Optional: remove class to re-trigger animation when scrolling back up
-          // entry.target.classList.remove("is-visible");
-        }
-      });
-    }, observerOptions);
-
-    const animatedElements = document.querySelectorAll(
-      ".animate-fade-in, .animate-slide-up, .animate-slide-in-left"
-    );
-    animatedElements.forEach((el) => {
-      el.classList.add("reveal-hidden");
-      observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
 
   const myData = [
     {
@@ -76,7 +47,6 @@ const App = () => {
         <Skills />
         <Projects />
         <Services />
-        <Achievements />
         <Testimonials />
         <GitHubProfile gitHub={gitHub} />
         <Contact
