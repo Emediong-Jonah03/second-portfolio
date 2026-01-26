@@ -35,8 +35,8 @@ const App = () => {
   return (
     <div className="bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300 min-h-screen">
       <SEO
-        title="Emediong Jonah - Full Stack  Developer Portfolio"
-        description="Full Stack Developer specializing in React.js, JavaScript, Tailwind CSS, Python ,  WordPress. View my e-commerce projects, AI web apps, and let's work together."
+        title="Emediong Jonah - Software Developer Portfolio"
+        description="Software Developer specializing in building scalable secure user friendly applications and let's work together."
         image="/src/assets/profile.png"
       />
 

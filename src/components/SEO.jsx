@@ -2,8 +2,8 @@
 import { useEffect } from 'react';
 
 const SEO = ({ 
-  title = "Emediong Jonah - FullStack Developer, WordPress & React Specialist",
-  description = "Full Stack Developer specializing in React.js, JavaScript, Python, MongoDB, WordPress, and modern web development. View my portfolio projects and let's work together.",
+  title = "Emediong Jonah - Softare Developer Portfolio",
+  description = "Software Developer specializing in building scalable secure user friendly applications and let's work together.",
   image = "/src/assets/profile.png"
 }) => {
   useEffect(() => {

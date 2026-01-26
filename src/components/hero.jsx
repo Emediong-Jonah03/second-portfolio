@@ -1,6 +1,6 @@
 import { FaFileDownload, FaChevronDown } from "react-icons/fa";
 import resume from "../assets/resume.pdf";
-import image from "/src/assets/profile-pic.jpeg";
+import image from "/src/assets/profile.png";
 
 const Hero = () => {
   const scrollToSection = (id) => {
@@ -50,11 +50,11 @@ const Hero = () => {
 
         {/* Image */}
         <div className="flex justify-center animate-fade-in is-visible">
-          <div className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-gradient-to-br from-[var(--primary)] to-blue-600 rounded-full flex items-center justify-center p-1 shadow-xl hover:scale-105 transition-transform duration-500">
+          <div className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 flex items-center justify-center p-1 shadow-xl hover:scale-105 transition-transform duration-500">
             <img
               src={image}
               alt="Portrait of Emediong"
-              className="rounded-full w-full h-full object-cover"
+              className="rounded-full w-full object-cover mx-w-full h-auto"
             />
           </div>
         </div>
