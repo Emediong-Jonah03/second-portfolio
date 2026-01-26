@@ -2,6 +2,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter, FaWhatsapp } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
+import { FiBarChart2 } from "react-icons/fi";
 
 const Footer = ({ gitHub, linkedin, gmail, twitter, whatsapp }) => {
   return (
@@ -47,8 +48,15 @@ const Footer = ({ gitHub, linkedin, gmail, twitter, whatsapp }) => {
             </a>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t border-[var(--primary)]/5 text-center opacity-40 text-sm">
-          <p>© {new Date().getFullYear()} Emediong Jonah. All rights reserved.</p>
+        <div className="mt-12 pt-8 border-t border-[var(--primary)]/5 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="opacity-40 text-sm">© {new Date().getFullYear()} Emediong Jonah. All rights reserved.</p>
+          <a
+            href="/dashboard"
+            className="flex items-center gap-2 text-sm opacity-60 hover:opacity-100 text-[var(--primary)] transition-all"
+          >
+            <FiBarChart2 className="w-4 h-4" />
+            <span>Analytics Dashboard</span>
+          </a>
         </div>
       </div>
     </footer>
