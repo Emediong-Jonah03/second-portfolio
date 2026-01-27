@@ -1,10 +1,9 @@
-// components/SEO.jsx
 import { useEffect } from 'react';
 
 const SEO = ({ 
-  title = "Emediong Jonah - Softare Developer Portfolio",
-  description = "Software Developer specializing in building scalable secure user friendly applications and let's work together.",
-  image = "/src/assets/profile.png"
+  title = "Emediong Jonah | Software Developer & AI Integration Specialist",
+  description = "Emediong Jonah is a Software Developer specializing in Full-Stack Web Engineering, AI Integration, and building scalable, secure applications. View my portfolio and projects.",
+  image = "/src/assets/profile.png" // Ensure this path is correct after deployment
 }) => {
   useEffect(() => {
     // Update title
@@ -19,7 +18,7 @@ const SEO = ({
     }
     metaDescription.content = description;
     
-    // Update Open Graph tags
+    // Update Open Graph tags (For LinkedIn/WhatsApp/Facebook)
     const ogTags = {
       'og:title': title,
       'og:description': description,
@@ -28,11 +27,28 @@ const SEO = ({
       'og:url': window.location.href
     };
     
-    Object.entries(ogTags).forEach(([property, content]) => {
-      let metaTag = document.querySelector(`meta[property="${property}"]`);
+    // Update Twitter Tags (Crucial for X/Twitter previews)
+    const twitterTags = {
+      'twitter:card': 'summary_large_image',
+      'twitter:title': title,
+      'twitter:description': description,
+      'twitter:image': image
+    };
+    
+    const allTags = { ...ogTags, ...twitterTags };
+    
+    Object.entries(allTags).forEach(([key, content]) => {
+      let metaTag = key.startsWith('og:') 
+        ? document.querySelector(`meta[property="${key}"]`)
+        : document.querySelector(`meta[name="${key}"]`);
+
       if (!metaTag) {
         metaTag = document.createElement('meta');
-        metaTag.setAttribute('property', property);
+        if (key.startsWith('og:')) {
+          metaTag.setAttribute('property', key);
+        } else {
+          metaTag.setAttribute('name', key);
+        }
         document.head.appendChild(metaTag);
       }
       metaTag.content = content;

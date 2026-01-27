@@ -26,6 +26,7 @@ export default async (req: Request, context: Context) => {
       status: 405,
       headers: { "Content-Type": "application/json" },
     });
+    
   }
 
   try {
@@ -108,6 +109,7 @@ function parseBrowser(userAgent: string): string {
   if (userAgent.includes("Chrome")) return "Chrome";
   if (userAgent.includes("Safari")) return "Safari";
   if (userAgent.includes("Opera") || userAgent.includes("OPR")) return "Opera";
+  if (userAgent.includes("Brave")) return "Brave";
   return "Other";
 }
 

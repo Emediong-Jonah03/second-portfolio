@@ -9,6 +9,7 @@ import Hero from "./components/hero.jsx";
 import About from "./components/about.jsx"
 import Skills from "./components/skills.jsx";
 import Projects from "./components/projects.jsx";
+import Achievements from "./components/achievement.jsx";
 import { Testimonials, GitHubProfile } from "./components/testimonial.jsx";
 import Contact from "./components/contact.jsx";
 import Footer from "./components/footer.jsx";
@@ -79,6 +80,7 @@ const MainSite = () => {
         <Skills />
         <Projects />
         <Services />
+        <Achievements />
         <Testimonials />
         <GitHubProfile gitHub={gitHub} />
         <Contact

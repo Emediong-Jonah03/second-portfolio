@@ -1,62 +1,75 @@
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaSquareXTwitter, FaWhatsapp } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
-import { FiBarChart2 } from "react-icons/fi";
+import { FiBarChart2, FiArrowUp } from "react-icons/fi";
 
 const Footer = ({ gitHub, linkedin, gmail, twitter, whatsapp }) => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="bg-[var(--accent)] text-[var(--foreground)] py-12 border-t border-[var(--primary)]/10">
+    <footer className="bg-[var(--surface)] text-[var(--foreground)] py-16 border-t border-[var(--primary)]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div>
-            <h2 className="text-2xl font-bold text-[var(--primary)]">EmeDev</h2>
-            <p className="mt-2 opacity-60">Building digital excellence with passion</p>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+          
+          {/* Brand Section */}
+          <div className="max-w-xs">
+            <h2 className="text-2xl font-black tracking-tight text-[var(--primary)]">
+              EMEDIONG<span className="text-[var(--foreground)]">JONAH</span>
+            </h2>
+            <p className="mt-4 text-sm opacity-60 leading-relaxed">
+              Software Developer specializing in Full-Stack Engineering and AI Integration. 
+              Turning complex problems into seamless digital solutions.
+            </p>
           </div>
-          <div className="flex gap-6 fixed bottom-3 text-white bg-[var(--primary)] px-5 py-1.5 rounded-xl">
-            <a
-              href={whatsapp}
-              className="opacity-60 text-white hover:text-[var(--accent)] hover:opacity-100 transition-all"
-            >
-              <FaWhatsapp className="w-6 h-6" />
-            </a>
-            <a
-              href={gitHub}
-              className="opacity-60 text-white hover:text-[var(--accent)] hover:opacity-100 transition-all"
-            >
-              <FaGithub className="w-6 h-6" />
-            </a>
-            <a
-              href={linkedin}
-              target="_blank" rel="noopener noreferrer"
-              className="opacity-60 text-white hover:text-[var(--accent)] hover:opacity-100 transition-all"
-            >
-              <FaLinkedin className="w-6 h-6" />
-            </a>
-            <a
-              href={twitter}
-              target="_blank" rel="noopener noreferrer"
-              className="opacity-60 text-white hover:text-[var(--accent)] hover:opacity-100 transition-all"
-            >
-              <FaSquareXTwitter className="w-6 h-6" />
-            </a>
-            <a
-              href={gmail}
-              className="opacity-60 text-white hover:text-[var(--accent)] hover:opacity-100 transition-all"
-            >
-              <IoMdMail className="w-6 h-6" />
-            </a>
+
+          {/* Social Links - Removed the 'fixed' class */}
+          <div className="flex flex-wrap gap-4">
+            {[
+              { icon: <FaWhatsapp />, href: whatsapp, label: "WhatsApp" },
+              { icon: <FaGithub />, href: gitHub, label: "GitHub" },
+              { icon: <FaLinkedin />, href: linkedin, label: "LinkedIn" },
+              { icon: <FaSquareXTwitter />, href: twitter, label: "Twitter" },
+              { icon: <IoMdMail />, href: `mailto:${gmail}`, label: "Email" },
+            ].map((social, index) => (
+              <a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="p-3 bg-[var(--background)] border border-[var(--primary)]/10 rounded-xl text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)] hover:border-[var(--primary)] transition-all shadow-sm"
+              >
+                <span className="text-xl">{social.icon}</span>
+              </a>
+            ))}
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t border-[var(--primary)]/5 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="opacity-40 text-sm">© {new Date().getFullYear()} Emediong Jonah. All rights reserved.</p>
-          <a
-            href="/dashboard"
-            className="flex items-center gap-2 text-sm opacity-60 hover:opacity-100 text-[var(--primary)] transition-all"
+
+        {/* Bottom Bar */}
+        <div className="mt-16 pt-8 border-t border-[var(--primary)]/5 flex flex-col sm:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
+            <p className="opacity-40 text-xs tracking-widest uppercase">
+              © {new Date().getFullYear()} Emediong Jonah
+            </p>
+            <a
+              href="/dashboard"
+              className="flex items-center gap-2 text-xs font-bold opacity-40 hover:opacity-100 text-[var(--primary)] transition-all uppercase tracking-widest"
+            >
+              <FiBarChart2 className="w-4 h-4" />
+              <span>Platform Analytics</span>
+            </a>
+          </div>
+
+          {/* Back to top */}
+          <button 
+            onClick={scrollToTop}
+            className="group flex items-center gap-2 text-xs font-bold opacity-40 hover:opacity-100 transition-all uppercase tracking-widest"
           >
-            <FiBarChart2 className="w-4 h-4" />
-            <span>Analytics Dashboard</span>
-          </a>
+            Back to Top
+            <FiArrowUp className="group-hover:-translate-y-1 transition-transform" />
+          </button>
         </div>
       </div>
     </footer>

@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .replit
+
+# Local Netlify folder
+.netlify
