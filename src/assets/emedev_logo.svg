@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0D2347;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Blue glow gradient for circuit -->
+    <linearGradient id="circuitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2979C8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#56B3FF;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Accent gradient for SDS text -->
+    <linearGradient id="sdsGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#56B3FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft glow for dots -->
+    <filter id="dotGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Clip circle -->
+    <clipPath id="circleClip">
+      <circle cx="200" cy="105" r="72"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bgGrad)" rx="16"/>
+
+  <!-- Subtle grid overlay -->
+  <g opacity="0.05" stroke="#4A9EFF" stroke-width="0.5">
+    <line x1="0" y1="60" x2="400" y2="60"/>
+    <line x1="0" y1="120" x2="400" y2="120"/>
+    <line x1="0" y1="180" x2="400" y2="180"/>
+    <line x1="0" y1="240" x2="400" y2="240"/>
+    <line x1="80" y1="0" x2="80" y2="300"/>
+    <line x1="160" y1="0" x2="160" y2="300"/>
+    <line x1="240" y1="0" x2="240" y2="300"/>
+    <line x1="320" y1="0" x2="320" y2="300"/>
+  </g>
+
+  <!-- ── ICON: Circuit hexagon ── -->
+  <!-- Outer hex ring -->
+  <polygon
+    points="200,38 262,73 262,143 200,178 138,143 138,73"
+    fill="none"
+    stroke="url(#circuitGrad)"
+    stroke-width="1.5"
+    opacity="0.4"
+  />
+
+  <!-- Main hex -->
+  <polygon
+    points="200,48 255,80 255,143 200,175 145,143 145,80"
+    fill="#0D1E3A"
+    stroke="url(#circuitGrad)"
+    stroke-width="2"
+    filter="url(#glow)"
+  />
+
+  <!-- Circuit lines inside hex -->
+  <!-- Horizontal bar -->
+  <line x1="163" y1="108" x2="237" y2="108" stroke="#2979C8" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Left branch up -->
+  <polyline points="163,108 163,88 178,88" fill="none" stroke="#2979C8" stroke-width="1.5" opacity="0.8"/>
+  <!-- Left branch down -->
+  <polyline points="163,108 163,128 178,128" fill="none" stroke="#2979C8" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Right branch up -->
+  <polyline points="237,108 237,88 222,88" fill="none" stroke="#2979C8" stroke-width="1.5" opacity="0.8"/>
+  <!-- Right branch down -->
+  <polyline points="237,108 237,128 222,128" fill="none" stroke="#2979C8" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Center vertical -->
+  <line x1="200" y1="88" x2="200" y2="128" stroke="#56B3FF" stroke-width="1.5" opacity="0.9"/>
+
+  <!-- Circuit nodes / dots -->
+  <circle cx="163" cy="108" r="3.5" fill="#56B3FF" filter="url(#dotGlow)"/>
+  <circle cx="237" cy="108" r="3.5" fill="#56B3FF" filter="url(#dotGlow)"/>
+  <circle cx="178" cy="88" r="2.5" fill="#2979C8" filter="url(#dotGlow)"/>
+  <circle cx="222" cy="88" r="2.5" fill="#2979C8" filter="url(#dotGlow)"/>
+  <circle cx="178" cy="128" r="2.5" fill="#2979C8" filter="url(#dotGlow)"/>
+  <circle cx="222" cy="128" r="2.5" fill="#2979C8" filter="url(#dotGlow)"/>
+  <circle cx="200" cy="88" r="3" fill="#56B3FF" filter="url(#dotGlow)"/>
+  <circle cx="200" cy="128" r="3" fill="#56B3FF" filter="url(#dotGlow)"/>
+  <circle cx="200" cy="108" r="5" fill="#FFFFFF" filter="url(#dotGlow)"/>
+
+  <!-- Outer circuit spurs from hex corners -->
+  <g stroke="#2979C8" stroke-width="1" opacity="0.5">
+    <!-- Top right spur -->
+    <polyline points="255,80 272,70 285,70" fill="none"/>
+    <circle cx="285" cy="70" r="2.5" fill="#2979C8"/>
+
+    <!-- Bottom right spur -->
+    <polyline points="255,143 272,153 285,153" fill="none"/>
+    <circle cx="285" cy="153" r="2.5" fill="#2979C8"/>
+
+    <!-- Top left spur -->
+    <polyline points="145,80 128,70 115,70" fill="none"/>
+    <circle cx="115" cy="70" r="2.5" fill="#2979C8"/>
+
+    <!-- Bottom left spur -->
+    <polyline points="145,143 128,153 115,153" fill="none"/>
+    <circle cx="115" cy="153" r="2.5" fill="#2979C8"/>
+  </g>
+
+  <!-- ── TEXT: EmeDev ── -->
+  <text
+    x="200" y="216"
+    font-family="'Courier New', Courier, monospace"
+    font-size="36"
+    font-weight="700"
+    fill="url(#sdsGrad)"
+    text-anchor="middle"
+    letter-spacing="3"
+    filter="url(#glow)"
+  >EmeDev</text>
+
+  <!-- ── TEXT: SOFTWARE DEVELOPMENT SERVICES ── -->
+  <text
+    x="200" y="238"
+    font-family="'Courier New', Courier, monospace"
+    font-size="9"
+    font-weight="400"
+    fill="#4A9EFF"
+    text-anchor="middle"
+    letter-spacing="4"
+    opacity="0.85"
+  >SOFTWARE DEVELOPMENT SERVICES</text>
+
+  <!-- Thin accent line under subtitle -->
+  <line x1="110" y1="248" x2="290" y2="248" stroke="url(#circuitGrad)" stroke-width="0.75" opacity="0.5"/>
+
+
+
+</svg>

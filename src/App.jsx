@@ -13,40 +13,11 @@ import Achievements from "./components/achievement.jsx";
 import { Testimonials, GitHubProfile } from "./components/testimonial.jsx";
 import Contact from "./components/contact.jsx";
 import Footer from "./components/footer.jsx";
-import Dashboard from "./components/Dashboard.jsx";
 
-// Analytics tracking hook
-const useAnalyticsTracking = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    // Don't track dashboard visits
-    if (location.pathname === "/dashboard") return;
-
-    const trackVisit = async () => {
-      try {
-        await fetch("/api/track-visit", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            page: location.pathname,
-            referrer: document.referrer || "Direct",
-          }),
-        });
-      } catch (error) {
-        // Silently fail - don't interrupt user experience
-        console.debug("Analytics tracking failed:", error);
-      }
-    };
-
-    trackVisit();
-  }, [location.pathname]);
-};
 
 // Main site content component
 const MainSite = () => {
   useScrollAnimation();
-  useAnalyticsTracking();
 
   const myData = [
     {
@@ -102,17 +73,12 @@ const MainSite = () => {
   );
 };
 
-// Dashboard page wrapper
-const DashboardPage = () => {
-  return <Dashboard />;
-};
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainSite />} />
-        <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -44,7 +44,7 @@ const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
             Let’s Build Something Great
           </h2>
           <p className="text-[var(--foreground)] opacity-60 max-w-xl mx-auto">
-            Ready to bring your project to life? Whether you have a question or a full proposal, 
+            Ready to bring your project to life? Whether you have a question or a full proposal,
             I'm just a message away.
           </p>
         </div>
@@ -55,7 +55,7 @@ const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
             <h3 className="text-2xl font-bold text-[var(--foreground)] mb-8">
               Contact Information
             </h3>
-            
+
             <div className="space-y-6 mb-10">
               <a href={`mailto:${gmail}`} className="flex items-center gap-5 text-[var(--foreground)] opacity-80 hover:text-[var(--primary)] transition-all group">
                 <div className="p-4 bg-[var(--background)] rounded-xl group-hover:scale-110 transition-transform">
@@ -131,11 +131,10 @@ const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
               <button
                 type="submit"
                 disabled={status === "Sending..."}
-                className={`w-full py-4 rounded-xl font-bold text-lg transition-all shadow-lg ${
-                  status === "Message Sent!" 
-                  ? "bg-green-500 text-white" 
+                className={`w-full py-4 rounded-xl font-bold text-lg transition-all shadow-lg ${status === "Message Sent!"
+                  ? "bg-green-500 text-white"
                   : "bg-[var(--primary)] text-[var(--background)] hover:brightness-110"
-                }`}
+                  }`}
               >
                 {status}
               </button>
@@ -145,15 +144,15 @@ const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
 
         {/* Social Bar (Twitter/Github) */}
         <div className="mt-12 flex justify-center gap-8 opacity-60">
-           <a href={gitHub} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors"><FaGithub size={28}/></a>
-           <a href={twitter} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors"><FaSquareXTwitter size={28}/></a>
+          <a href={gitHub} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors"><FaGithub size={28} /></a>
+          <a href={twitter} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors"><FaSquareXTwitter size={28} /></a>
         </div>
 
         {/* WhatsApp Floating Button */}
         <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="group">
           <div className="fixed bottom-10 right-10 z-50 flex items-center gap-3">
-             <span className="bg-white text-gray-800 px-3 py-1 rounded-lg text-sm font-bold shadow-xl opacity-0 group-hover:opacity-100 transition-opacity">Chat with me</span>
-             <FaWhatsapp className="w-14 h-14 text-green-500 bg-white rounded-full p-2 shadow-2xl hover:scale-110 transition-transform cursor-pointer" />
+            <span className="bg-white text-gray-800 px-3 py-1 rounded-lg text-sm font-bold shadow-xl opacity-0 group-hover:opacity-100 transition-opacity">Chat with me</span>
+            <FaWhatsapp className="w-14 h-14 text-white bg-green-600 rounded-full p-2 shadow-2xl hover:scale-110 transition-transform cursor-pointer animate-bounce" />
           </div>
         </a>
       </div>
