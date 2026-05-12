@@ -48,8 +48,8 @@ const Navigation = ({ gitHub, linkedin, gmail }) => {
         <div className="flex justify-between items-center">
 
           {/* Brand */}
-          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="sm:w-20 w-10 h-auto">
-            <img src={logo} alt="EmeDev" srcset={logo} className="rounded-full h-full w-full" />
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="sm:w-16 w-8 h-auto">
+            <img src={logo} alt="EmeDev" srcSet={logo} className="rounded-full h-full w-full" />
           </button>
 
           {/* Desktop Menu */}

@@ -1,65 +1,82 @@
-// Skills Section
-import { FaPython, FaHtml5, FaGitSquare, FaGithub ,FaNode} from "react-icons/fa";
+import { useState } from "react";
+import { FaPython, FaHtml5, FaGitSquare, FaNode, FaAws } from "react-icons/fa";
 import { FaJsSquare } from "react-icons/fa";
 import {
   SiDjango,
   SiMongodb,
   SiTailwindcss,
-  SiNetlify,
+  SiExpress,
+  SiFastapi,
+  SiTypescript,
+  SiDocker,
+  SiNextdotjs,
 } from "react-icons/si";
-import { IoLogoReact, IoLogoVercel } from "react-icons/io5";
-import { useState } from "react";
+import { IoLogoReact } from "react-icons/io5";
+import { BiLogoPostgresql } from "react-icons/bi";
 
 const Skills = () => {
-  const [isPaused, setIsPaused] = useState(false);
-
-  const allSkills = [
-    { name: "Python", icon: <FaPython className="w-12 h-12" style={{ color: '#3776AB' }} /> },
-    { name: "Django", icon: <SiDjango className="w-12 h-12" style={{ color: '#092E20' }} /> },
-    { name: "Node.js", icon: <FaNode className="w-12 h-12" style={{ color: '#47A248' }} /> },
-    { name: "MongoDB", icon: <SiMongodb className="w-12 h-12" style={{ color: '#47A248' }} /> },
-    { name: "React", icon: <IoLogoReact className="w-12 h-12" style={{ color: '#61DAFB' }} /> },
-    { name: "JS", icon: <FaJsSquare className="w-12 h-12" style={{ color: '#F7DF1E' }} /> },
-    { name: "Tailwind", icon: <SiTailwindcss className="w-12 h-12" style={{ color: '#06B6D4' }} /> },
-    { name: "HTML5", icon: <FaHtml5 className="w-12 h-12" style={{ color: '#E34F26' }} /> },
-    { name: "Git", icon: <FaGitSquare className="w-12 h-12" style={{ color: '#F05032' }} /> },
-    { name: "GitHub", icon: <FaGithub className="w-12 h-12" style={{ color: 'var(--foreground)' }} /> },
-    { name: "Vercel", icon: <IoLogoVercel className="w-12 h-12" style={{ color: 'var(--foreground)' }} /> },
-    { name: "Netlify", icon: <SiNetlify className="w-12 h-12" style={{ color: '#00C7B7' }} /> },
+  const skillCategories = [
+    {
+      title: "Frontend Development",
+      skills: [
+        { name: "React", icon: <IoLogoReact className="text-4xl" style={{ color: '#61DAFB' }} /> },
+        { name: "Next.js", icon: <SiNextdotjs className="text-4xl" style={{ color: '#000000' }} /> },
+        { name: "TypeScript", icon: <SiTypescript className="text-4xl" style={{ color: '#3178C6' }} /> },
+        { name: "JS", icon: <FaJsSquare className="text-4xl" style={{ color: '#F7DF1E' }} /> },
+        { name: "Tailwind", icon: <SiTailwindcss className="text-4xl" style={{ color: '#06B6D4' }} /> },
+        { name: "HTML5", icon: <FaHtml5 className="text-4xl" style={{ color: '#E34F26' }} /> },
+      ]
+    },
+    {
+      title: "Backend & Database",
+      skills: [
+        { name: "Python", icon: <FaPython className="text-4xl" style={{ color: '#3776AB' }} /> },
+        { name: "FastAPI", icon: <SiFastapi className="text-4xl" style={{ color: '#05998B' }} /> },
+        { name: "Django", icon: <SiDjango className="text-4xl" style={{ color: '#092E20' }} /> },
+        { name: "Node.js", icon: <FaNode className="text-4xl" style={{ color: '#47A248' }} /> },
+        { name: "Express", icon: <SiExpress className="text-4xl" style={{ color: '#000000' }} /> },
+        { name: "PostgreSQL", icon: <BiLogoPostgresql className="text-4xl" style={{ color: '#4169E1' }} /> },
+        { name: "MongoDB", icon: <SiMongodb className="text-4xl" style={{ color: '#47A248' }} /> },
+      ]
+    },
+    {
+      title: "DevOps & Tools",
+      skills: [
+        { name: "Docker", icon: <SiDocker className="text-4xl" style={{ color: '#2496ED' }} /> },
+        { name: "Git", icon: <FaGitSquare className="text-4xl" style={{ color: '#F05032' }} /> },
+      ]
+    }
   ];
 
-  const carouselSkills = [...allSkills, ...allSkills];
-
   return (
-    <section id="skills" className="py-20 bg-[var(--background)] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <h2 className="text-4xl font-bold text-center text-[var(--foreground)]">
+    <section id="skills" className="py-4 bg-[var(--background)]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-bold text-center text-[var(--foreground)] mb-16">
           Skills & Expertise
         </h2>
-      </div>
 
-      <div className="relative">
-        {/* Gradient overlays for smooth fade effect */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[var(--background)] to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[var(--background)] to-transparent z-10 pointer-events-none"></div>
+        <div className="space-y-5">
+          {skillCategories.map((category, index) => (
+            <div key={index}>
+              <h3 className="text-2xl font-semibold text-[var(--foreground)] mb-4 opacity-90 border-l-4 border-[var(--primary)] pl-4">
+                {category.title}
+              </h3>
 
-        <div 
-          className="flex animate-scroll w-max"
-          style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          {carouselSkills.map((skill, index) => (
-            <div
-              key={index}
-              className="flex-none w-40 h-40 mx-4 flex flex-col items-center justify-center bg-[var(--surface)] rounded-2xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/40 transition-all duration-300 shadow-sm group"
-            >
-              <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                {skill.icon}
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                {category.skills.map((skill, skillIndex) => (
+                  <div
+                    key={skillIndex}
+                    className="flex flex-col items-center justify-center py-4 bg-[var(--surface)] rounded-2xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/40 transition-all duration-300 shadow-sm group hover:-translate-y-1"
+                  >
+                    <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                      {skill.icon}
+                    </div>
+                    <span className="text-[var(--foreground)] font-medium text-sm opacity-80 group-hover:opacity-100">
+                      {skill.name}
+                    </span>
+                  </div>
+                ))}
               </div>
-              <span className="text-[var(--foreground)] font-medium opacity-80 group-hover:opacity-100">
-                {skill.name}
-              </span>
             </div>
           ))}
         </div>

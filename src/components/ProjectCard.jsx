@@ -32,10 +32,7 @@ const ProjectCard = ({ project, isActive }) => {
                         src={project.image}
                         alt={project.alt}
                         className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110"
-                        style={{
-                            filter: isActive ? "brightness(0.75) saturate(0.9)" : "brightness(0.4) saturate(0.5)",
-                            transition: "filter 0.5s ease, transform 0.7s ease-out",
-                        }}
+
                     />
                     {/* Shine sweep effect */}
                     <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -52,7 +49,7 @@ const ProjectCard = ({ project, isActive }) => {
                             style={{
                                 fontFamily: "'JetBrains Mono', monospace",
                                 fontSize: "14px",
-                                color: "var(--primary)",
+
                                 fontWeight: "bold",
                                 letterSpacing: "0.15em",
                             }}
@@ -83,7 +80,7 @@ const ProjectCard = ({ project, isActive }) => {
                                 fontFamily: "'Syne', sans-serif",
                                 fontWeight: 800,
                                 fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
-                                color: "var(--foreground)",
+
                                 lineHeight: 1.1,
                                 letterSpacing: "-0.02em",
                                 textShadow: "0 2px 10px rgba(0,0,0,0.3)"

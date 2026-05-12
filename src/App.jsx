@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, data } from "react-router-dom";
 import SEO from "./components/SEO.jsx"
 import Services from "./components/services.jsx"
 import useScrollAnimation from "./hooks/scrollAnimation.jsx";
@@ -25,8 +25,9 @@ const MainSite = () => {
         "https://www.linkedin.com/in/emediong-jonah-68a093329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       GitHubProfile: "https://t.co/OBbI1f1oVK",
       Xprofile: "https://twitter.com/EmediongJ15081",
-      gmail: "mailto: jonahemediong9@gmail.com",
+      gmail: "mailto:emediongjonah66@gmail.com",
       whatsapp: "https://wa.me/message/JIBWQ6FWKT6CI1",
+      tip: "https://selar.com/showlove/emediong-emedev"
     },
   ];
 
@@ -35,6 +36,7 @@ const MainSite = () => {
   const twitter = myData.map((data) => data.Xprofile);
   const gmail = myData.map((data) => data.gmail);
   const whatsapp = myData.map((data) => data.whatsapp);
+  const tip = myData.map(data => data.tip)
 
   return (
     <div className="bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300 min-h-screen">
@@ -60,6 +62,7 @@ const MainSite = () => {
           twitter={twitter}
           gitHub={gitHub}
           whatsapp={whatsapp}
+          tip={tip}
         />
         <Footer
           linkedin={linkedin}

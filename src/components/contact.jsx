@@ -1,11 +1,12 @@
 import { useState, useRef } from "react";
 import emailjs from '@emailjs/browser';
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp, FaCoffee } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { SlCalender } from "react-icons/sl";
 
-const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
+
+const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp, tip }) => {
   const form = useRef();
   const [status, setStatus] = useState("Send Message");
   const [formData, setFormData] = useState({
@@ -153,6 +154,13 @@ const Contact = ({ linkedin, twitter, gitHub, gmail, whatsapp }) => {
           <div className="fixed bottom-10 right-10 z-50 flex items-center gap-3">
             <span className="bg-white text-gray-800 px-3 py-1 rounded-lg text-sm font-bold shadow-xl opacity-0 group-hover:opacity-100 transition-opacity">Chat with me</span>
             <FaWhatsapp className="w-14 h-14 text-white bg-green-600 rounded-full p-2 shadow-2xl hover:scale-110 transition-transform cursor-pointer animate-bounce" />
+          </div>
+        </a>
+
+        <a href={tip} target="_blank" rel="noopener noreferrer" className="group">
+          <div className="fixed bottom-10 left-4 z-50 flex items-center gap-3">
+            <span className="bg-white text-gray-800 px-3 py-1 rounded-lg text-sm font-bold shadow-xl opacity-0 group-hover:opacity-100 transition-opacity">Buy me a coffee</span>
+            <FaCoffee className="w-14 h-14 text-white bg-(--tertiary) rounded-full p-2 shadow-2xl hover:scale-110 transition-transform cursor-pointer animate-bounce" />
           </div>
         </a>
       </div>

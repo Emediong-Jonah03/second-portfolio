@@ -21,7 +21,7 @@ const projects = [
     process: null,
     result: null,
     tech: ["TypeScript", "Sanity", "React", "Tailwind CSS"],
-    liveDemo: "https://mebaspr.vercel.app/",
+    liveDemo: "https://mebaspr.netlify.app",
     github: "",
   },
   {
