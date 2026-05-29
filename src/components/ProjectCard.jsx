@@ -49,7 +49,7 @@ const ProjectCard = ({ project, isActive }) => {
                             style={{
                                 fontFamily: "'JetBrains Mono', monospace",
                                 fontSize: "14px",
-
+                                color: "var(--primary)",
                                 fontWeight: "bold",
                                 letterSpacing: "0.15em",
                             }}

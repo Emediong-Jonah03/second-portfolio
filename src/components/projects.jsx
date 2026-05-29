@@ -7,8 +7,27 @@ import resumeAnalyser from "../assets/resume-analyser.png";
 import medic from "../assets/medical.png";
 import mebaspr from "../assets/mebaspr.png";
 import interviewer from "../assets/interviewer.png";
+import dlcf from "../assets/dlcf-futia.png";
 
 const projects = [
+
+  {
+    title: "DLCF-IKOTABASI",
+    index: "01",
+    image: dlcf,
+    alt: "dlcf website",
+    tag: "Church Website",
+    description:
+      "A  church website for Deeper Life Bible church that is dedicated to providing information about the church and its activities.",
+    problem: null,
+    process: null,
+    result: null,
+    tech: ["TypeScript", "React", "Tailwind CSS", 'MongoDB', 'Node.js'],
+    liveDemo: "https://dlcf-futia-hub.vercel.app",
+    github: "",
+  },
+
+
   {
     title: "MEBASPR",
     index: "01",
@@ -21,7 +40,7 @@ const projects = [
     process: null,
     result: null,
     tech: ["TypeScript", "Sanity", "React", "Tailwind CSS"],
-    liveDemo: "https://mebaspr.netlify.app",
+    liveDemo: "https://mebaspr.vercel.app",
     github: "",
   },
   {
@@ -53,7 +72,7 @@ const projects = [
       "Engineered a custom Node.js, TypeScript backend and integrated Grok's API for fast responses and interview feedback.",
     result: "Better Interview Preparation and Confidence Building.",
     tech: ["Node.js", "TypeScript", "Grok API", "React", "Tailwind CSS", "PostgreSQL"],
-    liveDemo: "https://ai-interveiwer.vercel.app/",
+    liveDemo: "",
     github: "",
   },
   {
