@@ -6,14 +6,14 @@ import AIChef from "../assets/AI-web-app.png";
 import resumeAnalyser from "../assets/resume-analyser.png";
 import medic from "../assets/medical.png";
 import mebaspr from "../assets/mebaspr.png";
-import interviewer from "../assets/interviewer.png";
+import drycatch from "../assets/drycatch.png";
 import dlcf from "../assets/dlcf-futia.png";
 
 const projects = [
   {
     title: "DryCatch",
     index: "01",
-    image: cosmec,
+    image: drycatch,
     alt: "DryCatch e-commerce platform",
     tag: "E-Commerce Platform",
     description:
@@ -64,7 +64,7 @@ const projects = [
     process:
       "Built a Sanity-powered React site with a blog, opportunity listings, and a contact pipeline — content fully managed by the client.",
     result: "A polished, brand-consistent platform the client updates independently without developer involvement.",
-    tech: ["TypeScript", "Sanity CMS", "React", "Tailwind CSS"],
+    tech: ["TypeScript", "Express", "React", "Tailwind CSS", 'PostgreSQL',],
     liveDemo: "https://mebaspr.vercel.app",
     github: "",
     outcomes: [

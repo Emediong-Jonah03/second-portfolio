@@ -4,39 +4,37 @@ const tiers = [
   {
     icon: <FaServer className="w-8 h-8 text-[var(--primary)]" />,
     title: "MVP Backend",
-    price: "from $300",
+    price: "from $200",
     description: "FastAPI or Express backend, database setup, user auth, and deployment. You get a working API your frontend — or your team — can build on immediately.",
     features: [
       "REST API with FastAPI or Express",
       "Database design & setup",
       "Auth (JWT / session-based)",
     ],
-    timeline: "Delivered in 2–3 weeks",
   },
   {
     icon: <FaCode className="w-8 h-8 text-[var(--primary)]" />,
     title: "Full-Stack Web App",
-    price: "from $600",
+    price: "from $300",
     description: "Frontend and backend built together — with payments, an admin panel, and role-based access. Everything a launch-ready product needs.",
     features: [
       "React frontend + FastAPI backend",
       "Paystack payment integration",
       "Admin panel & RBAC",
     ],
-    timeline: "Delivered in 4–6 weeks",
+   
     featured: true,
   },
   {
     icon: <FaCog className="w-8 h-8 text-[var(--primary)]" />,
     title: "Custom Build",
-    price: "from $1,000",
+    price: "xxx-xxx",
     description: "For complex systems that don't fit a template — AI integrations, multi-role platforms, or anything that needs a scoped technical plan first.",
     features: [
       "AI & LLM integrations",
       "Multi-role platform architecture",
       "Custom scope & timeline",
     ],
-    timeline: "Timeline scoped per project",
   },
 ];
 
@@ -100,9 +98,7 @@ const Services = () => {
                 ))}
               </ul>
 
-              <p className="text-xs text-[var(--foreground)] opacity-40 font-mono mb-6 uppercase tracking-widest">
-                {tier.timeline}
-              </p>
+            
 
               <button
                 onClick={() => scrollToSection("contact")}
