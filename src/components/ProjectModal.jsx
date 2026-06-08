@@ -48,13 +48,14 @@ const ProjectModal = ({ project, onClose }) => {
                 </button>
 
                 {/* Hero / Image Section */}
-                <div className="relative w-full h-48 md:h-64 shrink-0">
+                <div className="relative w-full shrink-0 bg-[var(--background)] flex items-center justify-center" style={{ maxHeight: "55vh" }}>
                     <img
                         src={project.image}
                         alt={project.alt}
-                        className="w-full h-full object-cover"
+                        className="w-full object-contain"
+                        style={{ maxHeight: "55vh" }}
                     />
-                    <div className="absolute inset-0 bg-linear-to-t from-(--surface) via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-(--surface) via-transparent to-transparent pointer-events-none" />
 
                     <div className="absolute bottom-6 left-8 right-8">
                         <div className="flex items-center gap-3 mb-2">
