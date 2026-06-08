@@ -27,11 +27,11 @@ const ProjectCard = ({ project, isActive }) => {
                 }}
             >
                 {/* Image panel */}
-                <div className="relative w-full h-1/2 overflow-hidden group">
+                <div className="relative w-full h-1/2 overflow-hidden group bg-[var(--background)]">
                     <img
                         src={project.image}
                         alt={project.alt}
-                        className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110"
+                        className="w-full h-full object-contain transition-all duration-700 ease-out group-hover:brightness-110"
 
                     />
                     {/* Shine sweep effect */}
