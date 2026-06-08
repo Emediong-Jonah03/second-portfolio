@@ -19,6 +19,7 @@ const MainSite = () => {
     linkedin: "https://www.linkedin.com/in/emediong-jonah-68a093329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "jonahemediong9@gmail.com",
     whatsapp: "https://wa.me/message/JIBWQ6FWKT6CI1",
+    tip: "https://selar.com/showlove/emediong-emedev",
   };
 
   return (
@@ -41,6 +42,7 @@ const MainSite = () => {
           linkedin={myData.linkedin}
           gmail={myData.gmail}
           whatsapp={myData.whatsapp}
+          tip={myData.tip}
         />
         <Footer
           linkedin={myData.linkedin}
