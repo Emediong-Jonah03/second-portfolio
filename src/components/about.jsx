@@ -1,66 +1,31 @@
-import { FaCode, FaTools, FaBrain } from "react-icons/fa";
-
 const About = () => {
-  const expertise = [
-    {
-      title: "Full-Stack Development",
-      icon: <FaCode className="text-[var(--primary)]" />,
-      skills: ["React", "JavaScript", "TypeScript", "Python", "Django", "Node.js"]
-    },
-    {
-      title: "AI & Database",
-      icon: <FaBrain className="text-[var(--primary)]" />,
-      skills: ["AI Integration", "OpenAI API", "MongoDB", "Express.js"]
-    },
-    {
-      title: "Workflow & Tools",
-      icon: <FaTools className="text-[var(--primary)]" />,
-      skills: ["Git", "GitHub", "Vite", "Tailwind CSS", "REST APIs"]
-    }
-  ];
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section id="about" className="py-20 bg-[var(--background)] animate-fade-in">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-[var(--foreground)] mb-16 animate-slide-up">
-          About Me
+          About
         </h2>
-        
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Text Content */}
-          <div className="animate-slide-in-left">
-            <h3 className="text-2xl font-semibold mb-4 text-[var(--primary)]">
-              The Intersection of Logic and Creativity
-            </h3>
-            <p className="text-[var(--foreground)] opacity-90 text-lg mb-6 leading-relaxed">
-              I am a **Software Developer** with a deep-seated passion for building robust, scalable systems that solve real-world problems. My journey into tech began with a curiosity for how the web works, which quickly evolved into a career focused on **Full-Stack Development** and **AI Integration**.
-            </p>
-            <p className="text-[var(--foreground)] opacity-90 text-lg mb-8 leading-relaxed">
-              I don’t just write code; I architect solutions. Whether it’s developing an e-commerce platform with a seamless user journey or engineering AI-driven tools that automate complex tasks, my goal is always the same: **to deliver high-performance software that provides tangible value.**
-            </p>
-            
-            <a href="#contact" className="inline-block px-6 py-3 bg-[var(--primary)] text-[var(--background)] font-bold rounded-lg hover:opacity-90 transition-all">
-              Work With Me
-            </a>
+
+        <div className="max-w-3xl mx-auto text-center animate-slide-up">
+          <p className="text-[var(--foreground)] opacity-90 text-xl leading-relaxed mb-6">
+            I'm Emediong Jonah, a full-stack developer who builds backend-first products for early-stage founders — the kind that handle real users, real payments, and real scale from day one. My flagship project, DryCatch, is a production e-commerce platform with Paystack payments, role-based access control, and a full admin panel — built end-to-end by me. You're not choosing between quality and speed; with a focused scope and a clear brief, you get both. The difference between me and a cheaper option is that you won't be rebuilding in six months.
+          </p>
+
+          <div className="mb-10 inline-block px-5 py-2.5 bg-[var(--surface)] border border-[var(--primary)]/20 rounded-full text-sm text-[var(--foreground)] opacity-70 font-mono tracking-wide">
+            Stack: FastAPI · React · PostgreSQL · Redis · Paystack · TypeScript
           </div>
 
-          {/* Expertise Grid */}
-          <div className="grid gap-6 animate-slide-in-right">
-            {expertise.map((item, index) => (
-              <div key={index} className="p-6 bg-[var(--surface)] rounded-xl border border-[var(--primary)]/10 shadow-sm hover:border-[var(--primary)]/40 transition-colors">
-                <div className="flex items-center gap-3 mb-4">
-                  {item.icon}
-                  <h4 className="text-xl font-bold text-[var(--foreground)]">{item.title}</h4>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {item.skills.map((skill, i) => (
-                    <span key={i} className="px-3 py-1 bg-[var(--background)] text-[var(--foreground)] text-sm rounded-full border border-[var(--primary)]/20">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+          <div>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="inline-block px-8 py-4 bg-[var(--primary)] text-[var(--background)] font-bold rounded-xl hover:brightness-110 transition-all text-base"
+            >
+              Let's talk about your project
+            </button>
           </div>
         </div>
       </div>

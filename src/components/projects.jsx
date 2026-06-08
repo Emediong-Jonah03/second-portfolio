@@ -10,116 +10,131 @@ import interviewer from "../assets/interviewer.png";
 import dlcf from "../assets/dlcf-futia.png";
 
 const projects = [
-
+  {
+    title: "DryCatch",
+    index: "01",
+    image: cosmec,
+    alt: "DryCatch e-commerce platform",
+    tag: "E-Commerce Platform",
+    description:
+      "A seafood vendor needed a full online store with payments, inventory, and order management — built to scale.",
+    problem: "A seafood vendor needed a full online store with payments, inventory, and order management — built to scale.",
+    process:
+      "Built a complete e-commerce backend with FastAPI and PostgreSQL, featuring role-based access, Paystack payments, admin dashboard, and real-time order tracking.",
+    result: "Full RBAC with USER / ADMIN / SUPER_ADMIN roles, Paystack payment integration with webhook handling, and an admin panel with order and inventory management.",
+    tech: ["FastAPI", "React", "PostgreSQL", "Paystack", "RBAC"],
+    liveDemo: "",
+    github: "",
+    outcomes: [
+      "Full RBAC with USER / ADMIN / SUPER_ADMIN roles",
+      "Paystack payment integration with webhook handling",
+      "Admin panel with order and inventory management",
+    ],
+  },
   {
     title: "DLCF-IKOTABASI",
-    index: "01",
+    index: "02",
     image: dlcf,
     alt: "dlcf website",
     tag: "Church Website",
     description:
-      "A  church website for Deeper Life Bible church that is dedicated to providing information about the church and its activities.",
-    problem: null,
-    process: null,
-    result: null,
-    tech: ["TypeScript", "React", "Tailwind CSS", 'MongoDB', 'Node.js'],
+      "A congregation needed a central hub for announcements, events, and contact — accessible to non-technical administrators.",
+    problem: "No online presence — events and announcements were managed informally with no searchable record.",
+    process:
+      "Built a content-managed church website with a clean React frontend and a Node/MongoDB backend, letting admins update content without touching code.",
+    result: "Delivered a fast, mobile-first site with dynamic content management and SEO-optimised pages.",
+    tech: ["TypeScript", "React", "Tailwind CSS", "MongoDB", "Node.js"],
     liveDemo: "https://dlcf-futia-hub.vercel.app",
     github: "",
+    outcomes: [
+      "Mobile-first responsive design",
+      "Admin-editable content sections",
+      "Live on Vercel with custom domain",
+    ],
   },
-
-
   {
     title: "MEBASPR",
-    index: "01",
+    index: "03",
     image: mebaspr,
-    alt: "mebaspr",
+    alt: "mebaspr consultancy platform",
     tag: "Consultancy Platform",
     description:
-      "A public relations consultancy and opportunity hub dedicated to advancing PR careers and delivering strategic communications services.",
-    problem: null,
-    process: null,
-    result: null,
-    tech: ["TypeScript", "Sanity", "React", "Tailwind CSS"],
+      "A PR consultancy needed a professional web presence to attract clients and post job opportunities.",
+    problem: "The firm had no website — losing credibility and leads to competitors with an online presence.",
+    process:
+      "Built a Sanity-powered React site with a blog, opportunity listings, and a contact pipeline — content fully managed by the client.",
+    result: "A polished, brand-consistent platform the client updates independently without developer involvement.",
+    tech: ["TypeScript", "Sanity CMS", "React", "Tailwind CSS"],
     liveDemo: "https://mebaspr.vercel.app",
     github: "",
+    outcomes: [
+      "CMS-driven content, no developer needed for updates",
+      "Service pages with integrated contact flow",
+      "Live on Vercel, fully client-managed",
+    ],
   },
   {
     title: "Resume Architect",
-    index: "02",
+    index: "04",
     image: resumeAnalyser,
     alt: "AI Resume Analyser",
     tag: "AI-Powered Tool",
     description:
-      "An intelligent career tool that utilizes LLMs to bridge the gap between job seekers and recruitment algorithms.",
-    problem: "Candidates struggling to bypass ATS filters and align with specific job descriptions.",
+      "Job seekers were getting filtered out by ATS systems before a human ever read their CV.",
+    problem: "Candidates struggling to bypass ATS filters and align CVs with specific job descriptions.",
     process:
-      "Engineered a custom Node.js backend to process PDF data and integrated OpenAI's API for semantic analysis.",
-    result: "Provides actionable insights that statistically improve interview callback rates.",
+      "Built a Node.js backend that processes PDF resumes and runs them through OpenAI's API for semantic gap analysis against a target job description.",
+    result: "Users receive specific, actionable rewrites — not generic tips — that improve callback rates.",
     tech: ["Node.js", "OpenAI API", "React", "Tailwind CSS"],
     liveDemo: "https://resume-analyzer-job-matcher-alpha.vercel.app/",
     github: "",
-  },
-  {
-    title: "Interview Ace",
-    index: "03",
-    image: interviewer,
-    alt: "Interview Ace",
-    tag: "AI-Powered Tool",
-    description:
-      "An intelligent chat that simulates real-time job interviews and provides feedback on responses.",
-    problem: "Solve unpreparedness of candidates for job interviews, lack of confidence, and poor communication skills.",
-    process:
-      "Engineered a custom Node.js, TypeScript backend and integrated Grok's API for fast responses and interview feedback.",
-    result: "Better Interview Preparation and Confidence Building.",
-    tech: ["Node.js", "TypeScript", "Grok API", "React", "Tailwind CSS", "PostgreSQL"],
-    liveDemo: "",
-    github: "",
+    outcomes: [
+      "PDF parsing with semantic job-match scoring",
+      "OpenAI-powered rewrite suggestions",
+      "Improved interview callback rates for users",
+    ],
   },
   {
     title: "Chef Intelligence",
-    index: "04",
+    index: "05",
     image: AIChef,
     alt: "AI Chef web app",
     tag: "AI Web App",
     description:
-      "A smart culinary assistant that eliminates decision fatigue by generating recipes from available ingredients.",
-    problem: "User indecision and food waste due to a lack of recipe inspiration.",
+      "Users wasted food and time deciding what to cook with the ingredients they already had.",
+    problem: "User indecision and food waste from lack of recipe inspiration at the ingredient level.",
     process:
-      "Integrated real-time AI prompt engineering with a responsive React frontend for instant recipe generation.",
-    result: "Streamlined meal planning, reducing user decision time by over 50%.",
+      "Integrated real-time AI prompt engineering with a React frontend — users input what's in their fridge and get a full recipe in seconds.",
+    result: "Practical AI utility that cuts meal-planning time and reduces household food waste.",
     tech: ["React", "AI Integration", "Prompt Engineering", "Vite"],
     liveDemo: "https://my-ai-chep.netlify.app/",
     github: "https://github.com/Emediong-Jonah03/AI-Chef",
-  },
-  {
-    title: "Cosmec Commerce",
-    index: "04",
-    image: cosmec,
-    alt: "Cosmetic e-commerce website",
-    tag: "E-Commerce",
-    description:
-      "A high-performance boutique shopping experience focused on conversion and smooth user flow.",
-    problem: "Maintaining seamless state management across complex product filtering and cart operations.",
-    process: "Developed a robust architecture using React Context API with persistent local storage sync.",
-    result: "Achieved a fluid, zero-latency shopping experience for end-users.",
-    tech: ["React", "Context API", "Tailwind CSS", "Data Persistence"],
-    liveDemo: "https://cosmetic-commerce.netlify.app/",
-    github: "https://github.com/Emediong-Jonah03/cosmec-ecommerce.git",
+    outcomes: [
+      "Ingredient-to-recipe generation in under 5 seconds",
+      "Zero-friction mobile-first UI",
+      "Reduces household food waste",
+    ],
   },
   {
     title: "MediLink",
-    index: "05",
+    index: "06",
     image: medic,
-    alt: "medical website",
+    alt: "medical platform",
     tag: "Healthcare Platform",
     description:
-      "A centralized digital ecosystem designed to streamline communication between healthcare providers.",
-    problem: "Fragmented communication channels between different hospital departments.",
-    process: "Architected a unified interface to centralize hospital data views and facility access.",
-    result: "Improved information accessibility and UI responsiveness for medical staff.",
-    tech: ["React", "Enterprise UI", "Tailwind CSS",],
+      "Hospital departments were managing patient data and facility access through disconnected, fragmented channels.",
+    problem: "Fragmented communication between hospital departments slowed down care and caused information gaps.",
+    process:
+      "Architected a unified React dashboard centralising data views, department access, and staff-facing workflows in one interface.",
+    result: "Reduced information silos and improved UI responsiveness for medical staff.",
+    tech: ["React", "Enterprise UI", "Tailwind CSS"],
     liveDemo: "https://medilink-project.netlify.app/",
     github: "",
+    outcomes: [
+      "Centralised cross-department data views",
+      "Responsive interface for medical staff",
+      "Reduced information retrieval time",
+    ],
   },
 ];
 
@@ -195,14 +210,13 @@ const Projects = () => {
       `}</style>
 
       <section id="projects" style={{ background: "var(--background)", paddingTop: "5rem", paddingBottom: "4rem", overflow: "hidden", marginTop: "2rem", marginLeft: "1rem", marginRight: "1rem" }}>
-        {/* Header */}
         <div className="max-w-7xl mx-auto px-6 mb-10 flex items-end justify-between" style={{ gap: "1rem" }}>
           <div>
             <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--primary)", marginBottom: "8px" }}>
-              Selected Work
+              Case Studies
             </p>
             <h2 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--foreground)", lineHeight: 1.05, letterSpacing: "-0.03em" }}>
-              Featured Engineering<br />Projects
+              Work I've Shipped
             </h2>
           </div>
 
@@ -229,7 +243,6 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Carousel */}
         <div
           ref={trackRef}
           className="projects-track"
@@ -256,7 +269,6 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Progress bar + dots + counter */}
         <div className="max-w-7xl mx-auto px-6 mt-8 flex items-center gap-6">
           <div className="flex gap-2">
             {projects.map((_, i) => (

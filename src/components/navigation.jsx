@@ -1,11 +1,18 @@
 import { useState, useEffect } from "react";
-import { FiMenu, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import { GoSun } from "react-icons/go";
 import { FaMoon } from "react-icons/fa";
 import logo from "../assets/emedev_logo.svg"
 
-const Navigation = ({ gitHub, linkedin, gmail }) => {
+const navLinks = [
+  { label: "About", target: "about" },
+  { label: "Work", target: "projects" },
+  { label: "Services", target: "services" },
+  { label: "Contact", target: "contact" },
+];
+
+const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -35,40 +42,42 @@ const Navigation = ({ gitHub, linkedin, gmail }) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false); // Closes menu after clicking
+      setIsOpen(false);
     }
   };
 
   return (
     <nav className={`fixed w-full z-[100] transition-all duration-300 ${scrolled
-      ? "py-3 bg-white text-black shadow-xl"
+      ? "py-3 bg-white dark:bg-[#0A0F1E] shadow-xl"
       : "py-5 bg-transparent"
       }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
 
-          {/* Brand */}
           <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="sm:w-16 w-8 h-auto">
             <img src={logo} alt="EmeDev" srcSet={logo} className="rounded-full h-full w-full" />
           </button>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             <div className="flex items-center gap-6 border-r border-[var(--primary)]/10 pr-8">
-              {["About", "Projects", "Milestones", "Contact"].map((item) => (
+              {navLinks.map((item) => (
                 <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
+                  key={item.label}
+                  onClick={() => scrollToSection(item.target)}
                   className="text-sm font-bold uppercase tracking-widest opacity-70 hover:opacity-100 hover:text-[var(--primary)] transition-all"
                 >
-                  {item}
+                  {item.label}
                 </button>
               ))}
             </div>
 
-            <div className="flex items-center gap-5">
-              <a href={gitHub} target="_blank" rel="noreferrer" className="opacity-60 hover:text-[var(--primary)] hover:opacity-100 transition-all"><FiGithub size={20} /></a>
-              <a href={linkedin} target="_blank" rel="noreferrer" className="opacity-60 hover:text-[var(--primary)] hover:opacity-100 transition-all"><FiLinkedin size={20} /></a>
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="px-5 py-2.5 bg-[var(--primary)] text-[var(--background)] font-bold rounded-xl text-sm hover:brightness-110 transition-all"
+              >
+                Book a Call
+              </button>
               <button
                 onClick={() => setIsDarkMode(!isDarkMode)}
                 className="p-2 rounded-xl bg-[var(--primary)]/10 text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-all"
@@ -78,7 +87,6 @@ const Navigation = ({ gitHub, linkedin, gmail }) => {
             </div>
           </div>
 
-          {/* Mobile Toggle - Added 'flex' specifically here */}
           <div className="md:hidden flex items-center gap-4">
             <button onClick={() => setIsDarkMode(!isDarkMode)} className="text-[var(--foreground)] p-2">
               {isDarkMode ? <GoSun size={22} /> : <FaMoon size={22} />}
@@ -90,24 +98,24 @@ const Navigation = ({ gitHub, linkedin, gmail }) => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay - Forced background colors for testing */}
       <div className={`md:hidden absolute top-full left-0 w-full transition-all duration-300 ease-in-out ${isOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-5 invisible"
         } bg-white text-[#001433] dark:bg-[#001433] dark:text-white border-b border-[var(--primary)]/10 p-6 shadow-2xl`}>
         <div className="flex flex-col gap-4 text-center">
-          {["About", "Projects", "Milestones", "Contact"].map((item) => (
+          {navLinks.map((item) => (
             <button
-              key={item}
-              onClick={() => scrollToSection(item.toLowerCase())}
+              key={item.label}
+              onClick={() => scrollToSection(item.target)}
               className="text-lg font-bold bg-white text-[#001433] dark:bg-[#001433] dark:text-white py-3 border-b border-[var(--primary)]/5 active:bg-[var(--primary)]/10 rounded-lg"
             >
-              {item}
+              {item.label}
             </button>
           ))}
-          <div className="flex justify-center gap-10 pt-6">
-            <a href={gitHub} className="text-black dark:text-white"><FiGithub size={26} /></a>
-            <a href={linkedin} className="text-black dark:text-white"><FiLinkedin size={26} /></a>
-            <a href={`mailto:${gmail}`} className="text-black dark:text-white"><FiMail size={26} /></a>
-          </div>
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="mt-2 py-3 bg-[var(--primary)] text-[var(--background)] font-bold rounded-xl text-base"
+          >
+            Book a Call
+          </button>
         </div>
       </div>
     </nav>
