@@ -4,7 +4,7 @@ import { FaChevronDown } from "react-icons/fa";
 const faqs = [
   {
     q: "How long does it take to build my product?",
-    a: "Most projects take 2–6 weeks depending on scope. You'll get a clear timeline before we start.",
+    a: "Most projects take 3–6 weeks depending on scope. You'll get a clear timeline before we start.",
   },
   {
     q: "What do you need from me to get started?",
@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: "How much does it cost?",
-    a: "Projects start at $300 for a backend MVP. Full-stack apps start at $600. I'll give you a fixed quote upfront — no surprises.",
+    a: "Projects start at $200 for a backend MVP. Full-stack apps start at $600. I'll give you a fixed quote upfront — no surprises.",
   },
   {
     q: "Why should I hire you over a cheaper option?",

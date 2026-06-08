@@ -17,7 +17,7 @@ const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    if (typeof window === "undefined") return true;
+    if (typeof window === "undefined") return false;
     return localStorage.getItem("theme") !== "light";
   });
 
@@ -48,7 +48,7 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed w-full z-[100] transition-all duration-300 ${scrolled
-      ? "py-3 bg-white dark:bg-[#0A0F1E] shadow-xl"
+      ? "py-3 bg-white dark:bg-[#0A0F1E] shadow-xl text-white"
       : "py-5 bg-transparent"
       }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
