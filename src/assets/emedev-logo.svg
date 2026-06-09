@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <title>EmeDev Mark</title>
+  <!-- Vertical spine: teal -->
+  <rect x="28" y="18" width="12" height="84" rx="3" fill="#38726c"/>
+  <!-- Top bar: burnt orange -->
+  <rect x="28" y="18" width="64" height="12" rx="3" fill="#d34e24"/>
+  <!-- Mid bar: vibrant orange -->
+  <rect x="28" y="54" width="48" height="12" rx="3" fill="#f28123"/>
+  <!-- Bottom bar: burnt orange -->
+  <rect x="28" y="90" width="64" height="12" rx="3" fill="#d34e24"/>
+</svg>

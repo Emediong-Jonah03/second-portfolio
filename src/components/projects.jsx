@@ -65,7 +65,7 @@ const projects = [
       "Built a Sanity-powered React site with a blog, opportunity listings, and a contact pipeline — content fully managed by the client.",
     result: "A polished, brand-consistent platform the client updates independently without developer involvement.",
     tech: ["TypeScript", "Express", "React", "Tailwind CSS", 'PostgreSQL',],
-    liveDemo: "https://mebaspr.vercel.app",
+    liveDemo: "https://mebaspr.netlify.app",
     github: "",
     outcomes: [
       "CMS-driven content, no developer needed for updates",

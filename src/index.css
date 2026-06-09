@@ -2,47 +2,61 @@
 
 /* Color & theme tokens */
 :root {
-  --background: #F8FAFC;
-  --foreground: #0F172A;
-  --primary: #2858c6;
-  --primary-glow: rgba(40, 88, 198, 0.15);
-  --secondary: #0ea5e9;
-  --tertiary: #3869d1;
-  --accent: #eef7ff;
-  --surface: #FFFFFF;
-  --border: #E2E8F0;
+  
+  --background: #FCF9F2;       /* Soft warm cream for clean reading */
+  --foreground: #563f1b;       /* Deep Earth Brown for high-contrast text */
+  
+  /* Primary Branding (Buttons, Key highlights) */
+  --primary: #d34e24;          /* Burnt Orange as the main action color */
+  --primary-glow: rgba(211, 78, 36, 0.15);
+  
+  /* Secondary & Tertiary (Accents, active states, gradients) */
+  --secondary: #38726c;        /* Deep Teal for a striking structural contrast */
+  --tertiary: #f28123;         /* Vibrant Orange for secondary focus items */
+  --accent: #f7f052;           /* Bright Yellow for highlights/badges */
+  
+  /* Structural Surfaces */
+  --surface: #FFFFFF;          /* Pure white cards to pop off the cream bg */
+  --border: #EFE9DB;           /* Soft warm border line */
 
-  /* Tag Colors */
-  --tag-blue: #dbeafe;
-  --tag-blue-text: #1e40af;
-  --tag-purple: #f3e8ff;
-  --tag-purple-text: #3829a8;
-  --tag-green: #dcfce7;
-  --tag-green-text: #166534;
-  --tag-orange: #ffedd5;
-  --tag-orange-text: #9a3412;
+  /* Tag Colors - Light Theme Adjustments */
+  --tag-blue: rgba(56, 114, 108, 0.15);     /* Tinted Teal */
+  --tag-blue-text: #38726c;
+  --tag-purple: rgba(211, 78, 36, 0.12);    /* Tinted Burnt Orange */
+  --tag-purple-text: #d34e24;
+  --tag-green: rgba(242, 129, 35, 0.12);    /* Tinted Vibrant Orange */
+  --tag-green-text: #b85400;
+  --tag-orange: rgba(247, 240, 82, 0.3);    /* Tinted Bright Yellow */
+  --tag-orange-text: #6b6300;
 }
 
 .dark {
-  --background: #03050c;
-  --foreground: #F1F5F9;
-  --primary: #2858c6;
-  --primary-glow: rgba(40, 88, 198, 0.15);
-  --secondary: #38bdf8;
-  --tertiary: #63a2e9;
-  --accent: #254f85;
-  --surface: #0F172A;
-  --border: #1E293B;
+  /* Main Background & Text - Bold Deep Teal/Earth Dark Theme */
+  --background: #111e1c;       /* Ultra-deep Teal-Black for a sleek tech backdrop */
+  --foreground: #FCF9F2;       /* Cream white text for excellent readability */
+  
+  /* Primary Branding (Pops vividly off the dark background) */
+  --primary: #f28123;          /* Vibrant Orange acts as the primary dark CTA */
+  --primary-glow: rgba(242, 129, 35, 0.2);
+  
+  /* Secondary & Tertiary Accents */
+  --secondary: #38726c;        /* Rich Teal for structural components */
+  --tertiary: #f7f052;         /* Bright Yellow for high-priority accents */
+  --accent: #d34e24;           /* Burnt Orange for subtle depth elements */
+  
+  /* Structural Surfaces */
+  --surface: #182b28;          /* Dark Teal surface cards */
+  --border: #233d39;           /* Muted Teal border lines */
 
-  /* Tag Colors - Dark */
-  --tag-blue: rgba(30, 64, 175, 0.2);
-  --tag-blue-text: #93c5fd;
-  --tag-purple: rgba(107, 33, 168, 0.2);
-  --tag-purple-text: #d8b4fe;
-  --tag-green: rgba(22, 101, 52, 0.2);
-  --tag-green-text: #86efac;
-  --tag-orange: rgba(154, 52, 18, 0.2);
-  --tag-orange-text: #fdba74;
+  /* Tag Colors - Dark Theme Adjustments */
+  --tag-blue: rgba(56, 114, 108, 0.3);
+  --tag-blue-text: #8bc3bc;
+  --tag-purple: rgba(211, 78, 36, 0.3);
+  --tag-purple-text: #ff916e;
+  --tag-green: rgba(242, 129, 35, 0.25);
+  --tag-green-text: #ffb170;
+  --tag-orange: rgba(247, 240, 82, 0.15);
+  --tag-orange-text: #fdf785;
 }
 
 /* Apply to body */
@@ -51,7 +65,6 @@ body {
   color: var(--foreground);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 /* Buttons */
 button,
 a.button {

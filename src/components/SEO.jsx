@@ -1,60 +1,74 @@
-import { useEffect } from 'react';
-import profile from "../assets/emedev_logo.svg";
+import { useEffect } from "react";
+import profile from "../assets/emedev-logo.svg";
+
+const BASE_URL = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") ?? "";
+
+const resolveImageUrl = (img) => {
+  if (!img) return "";
+  if (img.startsWith("http://") || img.startsWith("https://")) return img;
+  return `${BASE_URL}${img.startsWith("/") ? "" : "/"}${img}`;
+};
 
 const SEO = ({
-  title = "Emediong Jonah | Software Developer & AI Integration Specialist",
-  description = "Emediong Jonah is a Software Developer specializing in Full-Stack Web Engineering, AI Integration, and building scalable, secure applications. View my portfolio and projects.",
-  image = profile
+  title = "Emediong Jonah | Full-Stack Engineer & AI Integration Specialist",
+  description = "Emediong Jonah is a full-stack software engineer specializing in backend systems, AI integration, and scalable web applications. View portfolio and projects.",
+  image = profile,
+  type = "website",
 }) => {
   useEffect(() => {
+    const previousTitle = document.title;
     document.title = title;
 
-    // Update or create meta description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = 'description';
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.content = description;
+    const absoluteImage = resolveImageUrl(image);
+    const canonicalUrl = window.location.href;
 
-    // Update Open Graph tags (For LinkedIn/WhatsApp/Facebook)
-    const ogTags = {
-      'og:title': title,
-      'og:description': description,
-      'og:image': image,
-      'og:type': 'website',
-      'og:url': window.location.href
-    };
+    const metaTags = [
+      { attr: "name",     key: "description",           content: description },
 
-    // Update Twitter Tags (Crucial for X/Twitter previews)
-    const twitterTags = {
-      'twitter:card': 'summary_large_image',
-      'twitter:title': title,
-      'twitter:description': description,
-      'twitter:image': image
-    };
+      { attr: "property", key: "og:title",              content: title },
+      { attr: "property", key: "og:description",        content: description },
+      { attr: "property", key: "og:image",              content: absoluteImage },
+      { attr: "property", key: "og:type",               content: type },
+      { attr: "property", key: "og:url",                content: canonicalUrl },
 
-    const allTags = { ...ogTags, ...twitterTags };
+      { attr: "name",     key: "twitter:card",          content: "summary_large_image" },
+      { attr: "name",     key: "twitter:title",         content: title },
+      { attr: "name",     key: "twitter:description",   content: description },
+      { attr: "name",     key: "twitter:image",         content: absoluteImage },
+    ];
 
-    Object.entries(allTags).forEach(([key, content]) => {
-      let metaTag = key.startsWith('og:')
-        ? document.querySelector(`meta[property="${key}"]`)
-        : document.querySelector(`meta[name="${key}"]`);
+    const createdTags = [];
 
-      if (!metaTag) {
-        metaTag = document.createElement('meta');
-        if (key.startsWith('og:')) {
-          metaTag.setAttribute('property', key);
-        } else {
-          metaTag.setAttribute('name', key);
-        }
-        document.head.appendChild(metaTag);
+    metaTags.forEach(({ attr, key, content }) => {
+      let tag = document.querySelector(`meta[${attr}="${key}"]`);
+      const isNew = !tag;
+
+      if (isNew) {
+        tag = document.createElement("meta");
+        tag.setAttribute(attr, key);
+        document.head.appendChild(tag);
+        createdTags.push(tag);
       }
-      metaTag.content = content;
+
+      tag.setAttribute("content", content);
     });
 
-  }, [title, description, image]);
+    // Canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    const canonicalIsNew = !canonical;
+    if (canonicalIsNew) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", canonicalUrl);
+
+    return () => {
+      document.title = previousTitle;
+      createdTags.forEach((tag) => tag.remove());
+      if (canonicalIsNew) canonical.remove();
+    };
+  }, [title, description, image, type]);
 
   return null;
 };

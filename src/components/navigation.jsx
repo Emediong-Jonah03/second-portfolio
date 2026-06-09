@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
-import { FiMenu } from "react-icons/fi";
-import { MdClose } from "react-icons/md";
-import { GoSun } from "react-icons/go";
-import { FaMoon } from "react-icons/fa";
-import logo from "../assets/emedev_logo.svg"
+import { GoSun, GoProject,  } from "react-icons/go";
+import { FaMoon} from "react-icons/fa";
+import { BiHome } from "react-icons/bi";
+import { GiPriceTag, GiPhone } from "react-icons/gi";
+import emedevlogo from "/src/assets/emedev-logo.svg";
 
 const navLinks = [
-  { label: "About", target: "about" },
-  { label: "Work", target: "projects" },
-  { label: "Services", target: "services" },
-  { label: "Contact", target: "contact" },
+ { label: "Work", icon: <GoProject size={20} />, target: "projects" },
+  { label: "Pricing", icon: <GiPriceTag size={20} />, target: "services" },
+  { label: "Contact", icon: <GiPhone size={20} />, target: "contact" },
 ];
 
 const Navigation = () => {
@@ -47,25 +46,34 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed w-full z-[100] transition-all duration-300 ${scrolled
-      ? "py-3 bg-white dark:bg-[#0A0F1E] shadow-xl text-white"
-      : "py-5 bg-transparent"
-      }`}>
+    <nav
+      className={`fixed w-full z-[100] transition-all duration-300 ${
+        scrolled
+          ? "py-3 bg-[var(--background)] dark:bg-[var(--foreground)] shadow-xl text-(--background) dark:text-(var(--foreground))"
+          : "py-5 bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
 
-          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="sm:w-16 w-8 h-auto">
-            <img src={logo} alt="EmeDev" srcSet={logo} className="rounded-full h-full w-full" />
+          {/* Logo */}
+          <button
+            onClick={() => scrollToSection("home")}
+            className="text-lg font-bold tracking-tight text-[var(--foreground)] dark:text-[var(--background)] hover:text-[var(--primary)] transition-colors"
+          >
+            <img src={emedevlogo} alt="EmeDev Logo" className="h-8 w-8" />
           </button>
 
+          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             <div className="flex items-center gap-6 border-r border-[var(--primary)]/10 pr-8">
               {navLinks.map((item) => (
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.target)}
-                  className="text-sm font-bold uppercase tracking-widest opacity-70 hover:opacity-100 hover:text-[var(--primary)] transition-all"
+                  className="flex items-center gap-2 text-sm font-bold hover:text-[var(--primary)] transition-colors"
                 >
+                  <span className="text-[var(--primary)]">{item.icon}</span>
                   {item.label}
                 </button>
               ))}
@@ -76,7 +84,7 @@ const Navigation = () => {
                 onClick={() => scrollToSection("contact")}
                 className="px-5 py-2.5 bg-[var(--primary)] text-[var(--background)] font-bold rounded-xl text-sm hover:brightness-110 transition-all"
               >
-                Book a Call
+                <GiPhone className="inline mr-2" /> Book a Call
               </button>
               <button
                 onClick={() => setIsDarkMode(!isDarkMode)}
@@ -87,33 +95,63 @@ const Navigation = () => {
             </div>
           </div>
 
-          <div className="md:hidden flex items-center gap-4">
-            <button onClick={() => setIsDarkMode(!isDarkMode)} className="text-[var(--foreground)] p-2">
-              {isDarkMode ? <GoSun size={22} /> : <FaMoon size={22} />}
+          {/* Mobile Controls */}
+          <div className="md:hidden flex items-center gap-3">
+            <button
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              className="p-2 rounded-xl bg-[var(--primary)]/10 text-[var(--primary)]"
+            >
+              {isDarkMode ? <GoSun size={20} /> : <FaMoon size={20} />}
             </button>
-            <button onClick={() => setIsOpen(!isOpen)} className="text-[var(--primary)] p-2">
-              {isOpen ? <MdClose size={30} /> : <FiMenu size={30} />}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-xl bg-[var(--primary)]/10 text-[var(--primary)] flex flex-col gap-1.5 items-center justify-center w-10 h-10"
+              aria-label="Toggle menu"
+            >
+              <span
+                className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
+                  isOpen ? "rotate-45 translate-y-2" : ""
+                }`}
+              />
+              <span
+                className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
+                  isOpen ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
+                  isOpen ? "-rotate-45 -translate-y-2" : ""
+                }`}
+              />
             </button>
           </div>
         </div>
       </div>
 
-      <div className={`md:hidden absolute top-full left-0 w-full transition-all duration-300 ease-in-out ${isOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-5 invisible"
-        } bg-white text-[#001433] dark:bg-[#001433] dark:text-white border-b border-[var(--primary)]/10 p-6 shadow-2xl`}>
-        <div className="flex flex-col gap-4 text-center">
+      {/* Mobile Dropdown */}
+      <div
+        className={`md:hidden absolute top-full left-0 w-full transition-all duration-300 ease-in-out ${
+          isOpen
+            ? "opacity-100 translate-y-0 visible"
+            : "opacity-0 -translate-y-5 invisible"
+        } bg-[var(--background)] border-b border-[var(--primary)]/10 p-6 shadow-2xl`}
+      >
+        <div className="flex flex-col gap-2">
           {navLinks.map((item) => (
             <button
               key={item.label}
               onClick={() => scrollToSection(item.target)}
-              className="text-lg font-bold bg-white text-[#001433] dark:bg-[#001433] dark:text-white py-3 border-b border-[var(--primary)]/5 active:bg-[var(--primary)]/10 rounded-lg"
+              className="flex items-center gap-3 text-base font-bold text-[var(--foreground)] py-3 px-4 border-b border-[var(--primary)]/5 active:bg-[var(--primary)]/10 rounded-lg text-left"
             >
+              <span className="text-[var(--primary)]">{item.icon}</span>
               {item.label}
             </button>
           ))}
           <button
             onClick={() => scrollToSection("contact")}
-            className="mt-2 py-3 bg-[var(--primary)] text-[var(--background)] font-bold rounded-xl text-base"
+            className="mt-3 py-3 bg-[var(--primary)] text-[var(--background)] font-bold rounded-xl text-base flex items-center justify-center gap-2"
           >
+            <GiPhone />
             Book a Call
           </button>
         </div>
