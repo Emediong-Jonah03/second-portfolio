@@ -23,7 +23,7 @@ const projects = [
       "Built a complete e-commerce backend with FastAPI and PostgreSQL, featuring role-based access, Paystack payments, admin dashboard, and real-time order tracking.",
     result: "Full RBAC with USER / ADMIN / SUPER_ADMIN roles, Paystack payment integration with webhook handling, and an admin panel with order and inventory management.",
     tech: ["FastAPI", "React", "PostgreSQL", "Paystack", "RBAC"],
-    liveDemo: "",
+    liveDemo: "https://drycatch-frontend.pxxl.click/",
     github: "",
     outcomes: [
       "Full RBAC with USER / ADMIN / SUPER_ADMIN roles",
