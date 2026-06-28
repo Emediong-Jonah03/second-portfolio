@@ -94,27 +94,7 @@ const projects = [
       "Improved interview callback rates for users",
     ],
   },
-  {
-    title: "Chef Intelligence",
-    index: "05",
-    image: AIChef,
-    alt: "AI Chef web app",
-    tag: "AI Web App",
-    description:
-      "Users wasted food and time deciding what to cook with the ingredients they already had.",
-    problem: "User indecision and food waste from lack of recipe inspiration at the ingredient level.",
-    process:
-      "Integrated real-time AI prompt engineering with a React frontend — users input what's in their fridge and get a full recipe in seconds.",
-    result: "Practical AI utility that cuts meal-planning time and reduces household food waste.",
-    tech: ["React", "AI Integration", "Prompt Engineering", "Vite"],
-    liveDemo: "https://my-ai-chep.netlify.app/",
-    github: "https://github.com/Emediong-Jonah03/AI-Chef",
-    outcomes: [
-      "Ingredient-to-recipe generation in under 5 seconds",
-      "Zero-friction mobile-first UI",
-      "Reduces household food waste",
-    ],
-  },
+  
   {
     title: "MediLink",
     index: "06",
