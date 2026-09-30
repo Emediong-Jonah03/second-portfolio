@@ -6,16 +6,16 @@ const BASE_URL = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") ?? "";
 const resolveImageUrl = (img) => {
   if (!img) return "";
   if (img.startsWith("http://") || img.startsWith("https://")) return img;
-  return `${BASE_URL}${img.startsWith("/") ? "" : "/"}${img}`;
+
+  const base = BASE_URL || window.location.origin;
+  return `${base}${img.startsWith("/") ? "" : "/"}${img}`;
 };
 
 const SEO = ({
-
   title = "Emediong Jonah | Backend-focused Full-Stack Engineer",
   description = "Emediong Jonah is a backend-focused full-stack engineer building secure, reliable systems behind digital products.",
-  image = profile
-
-
+  image = profile,
+  type = "website",
 }) => {
   useEffect(() => {
     const previousTitle = document.title;
@@ -25,18 +25,16 @@ const SEO = ({
     const canonicalUrl = window.location.href;
 
     const metaTags = [
-      { attr: "name",     key: "description",           content: description },
-
-      { attr: "property", key: "og:title",              content: title },
-      { attr: "property", key: "og:description",        content: description },
-      { attr: "property", key: "og:image",              content: absoluteImage },
-      { attr: "property", key: "og:type",               content: type },
-      { attr: "property", key: "og:url",                content: canonicalUrl },
-
-      { attr: "name",     key: "twitter:card",          content: "summary_large_image" },
-      { attr: "name",     key: "twitter:title",         content: title },
-      { attr: "name",     key: "twitter:description",   content: description },
-      { attr: "name",     key: "twitter:image",         content: absoluteImage },
+      { attr: "name", key: "description", content: description },
+      { attr: "property", key: "og:title", content: title },
+      { attr: "property", key: "og:description", content: description },
+      { attr: "property", key: "og:image", content: absoluteImage },
+      { attr: "property", key: "og:type", content: type },
+      { attr: "property", key: "og:url", content: canonicalUrl },
+      { attr: "name", key: "twitter:card", content: "summary_large_image" },
+      { attr: "name", key: "twitter:title", content: title },
+      { attr: "name", key: "twitter:description", content: description },
+      { attr: "name", key: "twitter:image", content: absoluteImage },
     ];
 
     const createdTags = [];
@@ -55,14 +53,15 @@ const SEO = ({
       tag.setAttribute("content", content);
     });
 
-    // Canonical link
     let canonical = document.querySelector('link[rel="canonical"]');
     const canonicalIsNew = !canonical;
+
     if (canonicalIsNew) {
       canonical = document.createElement("link");
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
+
     canonical.setAttribute("href", canonicalUrl);
 
     return () => {
