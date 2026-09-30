@@ -247,7 +247,7 @@ function PortfolioHome() {
         <section className="section work-section" id="work">
           <div className="work-intro">
             <div className="section-heading">
-              <div><span className="eyebrow">Selected work · 06 projects</span><h2>Proof in the work.</h2></div>
+              <div><span className="eyebrow">Selected work · 04 projects</span><h2>Proof in the work.</h2></div>
             </div>
             <p>Each project is a chance to solve a real product problem. The visuals show the work; the notes explain the thinking.</p>
           </div>

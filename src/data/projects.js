@@ -2,8 +2,6 @@ import drycatch from "../assets/drycatch.webp";
 import dlcf from "../assets/dlcf-futia.webp";
 import mebaspr from "../assets/mebaspr.webp";
 import resumeAnalyser from "../assets/resume-analyser.webp";
-import chef from "../assets/AI-web-app.webp";
-import medilink from "../assets/medical.webp";
 
 // Project links are intentionally private until a destination is explicitly added here.
 const projects = [
@@ -89,48 +87,6 @@ const projects = [
       dataFlow: "Resume content and a target job description enter the review flow, which returns AI-assisted feedback. Detailed processing and retention notes are not published.",
       challenges: "",
       outcome: "An AI-assisted resume analysis workflow. No measured job-search outcomes are published."
-    }
-  },
-  {
-    id: "chef-intelligence",
-    name: "Chef Intelligence",
-    type: "AI-powered web app",
-    image: chef,
-    alt: "Chef Intelligence ingredient-based recipe interface",
-    description: "A lightweight cooking assistant that turns ingredients on hand into a recipe starting point.",
-    role: "Full-stack project build",
-    technologies: ["React", "AI integration", "Vite"],
-    liveUrl: "",
-    githubUrl: "",
-    caseStudy: {
-      problem: "People want a practical starting point for cooking with ingredients they already have.",
-      architecture: "A React and Vite web app with an AI-powered recipe-generation flow.",
-      decisions: "The product starts from available ingredients so the AI capability is tied to a specific cooking task.",
-      security: "",
-      dataFlow: "",
-      challenges: "",
-      outcome: "An ingredient-led recipe-generation experience. No measured outcomes are published."
-    }
-  },
-  {
-    id: "medilink",
-    name: "MediLink",
-    type: "Healthcare concept",
-    image: medilink,
-    alt: "MediLink healthcare platform concept pages",
-    description: "A healthcare platform concept focused on connecting information and workflows across hospital departments.",
-    role: "Frontend project build",
-    technologies: ["React", "Responsive UI", "Tailwind CSS"],
-    liveUrl: "",
-    githubUrl: "",
-    caseStudy: {
-      problem: "The concept explores how hospital departments could access related information and workflows in one place.",
-      architecture: "A React and Tailwind CSS interface concept focused on responsive department-facing views.",
-      decisions: "The work centers on bringing related information into a consistent interface; backend and data architecture details are not published.",
-      security: "",
-      dataFlow: "",
-      challenges: "",
-      outcome: "A healthcare platform interface concept. No hospital deployment or operational outcomes are claimed."
     }
   }
 ];
