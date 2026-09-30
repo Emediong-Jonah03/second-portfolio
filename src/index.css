@@ -2,6 +2,7 @@
 @import "tailwindcss";
 
 :root {
+
   font-family: "DM Sans", sans-serif;
   color: #202a27;
   background: #f5f4ef;
@@ -262,6 +263,63 @@ button { color: inherit; }
   .drycatch-visual { grid-template-columns: 1fr 1fr; }
   .case-study-meta { grid-template-columns: 1fr 1.3fr; }
   .case-study-links { grid-column: 1 / -1; flex-direction: row; }
+
+  
+  --background: #FCF9F2;       /* Soft warm cream for clean reading */
+  --foreground: #563f1b;       /* Deep Earth Brown for high-contrast text */
+  
+  /* Primary Branding (Buttons, Key highlights) */
+  --primary: #d34e24;          /* Burnt Orange as the main action color */
+  --primary-glow: rgba(211, 78, 36, 0.15);
+  
+  /* Secondary & Tertiary (Accents, active states, gradients) */
+  --secondary: #38726c;        /* Deep Teal for a striking structural contrast */
+  --tertiary: #f28123;         /* Vibrant Orange for secondary focus items */
+  --accent: #f7f052;           /* Bright Yellow for highlights/badges */
+  
+  /* Structural Surfaces */
+  --surface: #FFFFFF;          /* Pure white cards to pop off the cream bg */
+  --border: #EFE9DB;           /* Soft warm border line */
+
+  /* Tag Colors - Light Theme Adjustments */
+  --tag-blue: rgba(56, 114, 108, 0.15);     /* Tinted Teal */
+  --tag-blue-text: #38726c;
+  --tag-purple: rgba(211, 78, 36, 0.12);    /* Tinted Burnt Orange */
+  --tag-purple-text: #d34e24;
+  --tag-green: rgba(242, 129, 35, 0.12);    /* Tinted Vibrant Orange */
+  --tag-green-text: #b85400;
+  --tag-orange: rgba(247, 240, 82, 0.3);    /* Tinted Bright Yellow */
+  --tag-orange-text: #6b6300;
+}
+
+.dark {
+  /* Main Background & Text - Bold Deep Teal/Earth Dark Theme */
+  --background: #111e1c;       /* Ultra-deep Teal-Black for a sleek tech backdrop */
+  --foreground: #FCF9F2;       /* Cream white text for excellent readability */
+  
+  /* Primary Branding (Pops vividly off the dark background) */
+  --primary: #f28123;          /* Vibrant Orange acts as the primary dark CTA */
+  --primary-glow: rgba(242, 129, 35, 0.2);
+  
+  /* Secondary & Tertiary Accents */
+  --secondary: #38726c;        /* Rich Teal for structural components */
+  --tertiary: #f7f052;         /* Bright Yellow for high-priority accents */
+  --accent: #d34e24;           /* Burnt Orange for subtle depth elements */
+  
+  /* Structural Surfaces */
+  --surface: #182b28;          /* Dark Teal surface cards */
+  --border: #233d39;           /* Muted Teal border lines */
+
+  /* Tag Colors - Dark Theme Adjustments */
+  --tag-blue: rgba(56, 114, 108, 0.3);
+  --tag-blue-text: #8bc3bc;
+  --tag-purple: rgba(211, 78, 36, 0.3);
+  --tag-purple-text: #ff916e;
+  --tag-green: rgba(242, 129, 35, 0.25);
+  --tag-green-text: #ffb170;
+  --tag-orange: rgba(247, 240, 82, 0.15);
+  --tag-orange-text: #fdf785;
+
 }
 @media (max-width: 640px) {
   html { scroll-padding-top: 72px; }
@@ -341,6 +399,9 @@ button { color: inherit; }
   .case-study-end { align-items: flex-start; flex-direction: column; }
   .case-study-end p { font-size: 22px; }
 }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+
+
 }
