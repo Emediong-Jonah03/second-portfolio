@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import profile from "../assets/emedev_logo.svg";
 
 const SEO = ({
-  title = "Emediong Jonah | Software Developer & AI Integration Specialist",
-  description = "Emediong Jonah is a Software Developer specializing in Full-Stack Web Engineering, AI Integration, and building scalable, secure applications. View my portfolio and projects.",
+  title = "Emediong Jonah | Backend-focused Full-Stack Engineer",
+  description = "Emediong Jonah is a backend-focused full-stack engineer building secure, reliable systems behind digital products.",
   image = profile
 }) => {
   useEffect(() => {

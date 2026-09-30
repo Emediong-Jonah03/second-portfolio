@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://emediong-jonah.netlify.app//sitemap.xml
+Sitemap: https://emediong-jonah.netlify.app/sitemap.xml
