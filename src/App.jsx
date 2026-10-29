@@ -5,7 +5,7 @@ import SEO from "./components/SEO.jsx";
 import ProjectCaseStudy from "./components/ProjectCaseStudy.jsx";
 import projects from "./data/projects.js";
 import portrait from "./assets/Emediong.jpeg";
-import resume from "./assets/resume.pdf";
+import resume from "./assets/Emediong_Jonah_Backend_Engineer_CV_Revised.pdf";
 
 const linkedinUrl = "https://www.linkedin.com/in/emediong-jonah-68a093329/";
 const githubUrl = "https://github.com/Emediong-Jonah03";
